@@ -16,4 +16,4 @@ Designed as a Manifest V3 Side Panel extension, this plugin brings a fully auton
 4. **Rich Visual Output**
    Rather than printing a simple block of text, the agent reveals its live reasoning process incrementally as it thinks. Once the analysis concludes, the final insights are presented in a clean, color-coded, tabular format right in your browser's side panel—letting you review the correlated news and financial shifts at a single glance.
 
-   ypu tube recording link - https://youtu.be/e5rwvxhw5Ys
+   youtube recording link - https://youtu.be/e5rwvxhw5Ys
