@@ -25,3 +25,6 @@ The **Talk-to-App Dashboard** is a dynamic Chrome extension designed to turn nat
 2.  **AI Action:** Gemini calls `get_ticker_finance(ticker="RELIANCE")`.
 3.  **Data Processing:** The AI receives the raw JSON data, extracts the relevant years, and formats it into a `bar` or `line` chart spec.
 4.  **UI Update:** The side panel instantly refreshes with a professional-looking dashboard containing the requested comparison.
+
+5.  you tube recording here - https://youtu.be/04DnQT5P-vE
+6.  
