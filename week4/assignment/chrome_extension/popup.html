@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk-to-App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Talk-to-App</h1>
+      <button id="settings-btn" title="Settings">⚙️</button>
+    </header>
+
+    <main id="dashboard-content">
+      <div class="empty-state">
+        <p>Ask Gemini to build a financial dashboard...</p>
+        <p class="hint">e.g., "Show me RELIANCE financials for the last 5 years"</p>
+      </div>
+    </main>
+
+    <div id="settings-panel" class="hidden">
+      <h3>Settings</h3>
+      <div class="input-group">
+        <label>Gemini API Key</label>
+        <input type="password" id="gemini-key" placeholder="Enter key...">
+      </div>
+      <div class="input-group">
+        <label>FinEdge API Key</label>
+        <input type="password" id="finedge-key" placeholder="Enter key...">
+      </div>
+      <button id="save-settings">Save & Close</button>
+    </div>
+
+    <footer>
+      <div class="input-wrapper">
+        <input type="text" id="user-prompt" placeholder="Describe your dashboard...">
+        <button id="send-btn">➔</button>
+      </div>
+      <div id="status-bar" class="status-bar">Ready</div>
+    </footer>
+  </div>
+
+  <script src="renderer.js" type="module"></script>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
