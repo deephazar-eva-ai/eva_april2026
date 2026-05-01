@@ -1,14 +1,3 @@
-Listed directory week4
-Listed directory UI
-Listed directory prefab
-Listed directory 04_talk_to_app
-Listed directory assignment
-Listed directory chrome_extension
-Viewed manifest.json:1-24
-Viewed popup.html:1-50
-Viewed popup.js:1-182
-Viewed renderer.js:1-137
-
 The **Talk-to-App Dashboard** is a dynamic Chrome extension designed to turn natural language prompts into interactive financial dashboards. It serves as a browser-based port of the Python "Talk-to-App" project, leveraging AI to fetch data and design UI layouts on the fly.
 
 ### 🚀 Core Functionality
