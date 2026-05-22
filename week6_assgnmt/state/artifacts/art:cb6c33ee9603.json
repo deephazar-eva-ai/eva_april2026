@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:cb6c33ee9603",
+  "sha256": "cb6c33ee9603b14ef4ad393f7178cbe0bc2087f4275ed2668e6fe1da8f2e5c72",
+  "size_bytes": 16944,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 16944 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 16643,   \"text\": \"[Skip to content](https://tinytotintokyo.com/tokyo-family-events#main)\\n[![Tiny Tot In Tokyo](https://tinytotintokyo.com/tokyo-family-events)![Tiny Tot In Tokyo](http",
+  "created_at": 1779435450.7741024
+}

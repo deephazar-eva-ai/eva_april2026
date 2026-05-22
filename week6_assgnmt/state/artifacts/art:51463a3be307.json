@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:51463a3be307",
+  "sha256": "51463a3be30732aba3fcabeea25c559c13e2cf676a98a1be535a8eba033a9bc7",
+  "size_bytes": 18304,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 18304 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 18107,   \"text\": \"[ ](https://www.accuweather.com/pwa)\\n  * [ For Business ](https://afb.accuweather.com)\\n  * |\\n  * [ Warnings ](https://afb.accuweather.com/accuweather-skyguard)\\n",
+  "created_at": 1779454899.858159
+}
