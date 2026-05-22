@@ -16,6 +16,8 @@ Ensure the local LLM gateway is running. Then start the agent using `uv`:
 uv run main.py
 ```
 
+in the prompt paste the query , it will return the answer.
+
 ## Example Queries & Execution Logs
 
 The following execution logs demonstrate Agent6 successfully resolving complex, multi-step queries in 5 iterations or fewer.
