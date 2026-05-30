@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:7140ccfdb2df",
+  "sha256": "7140ccfdb2df0896d68c1cf6bab8f055930248efcd2cf24dad48a4fa73640d1b",
+  "size_bytes": 5290,
+  "content_type": "text/plain",
+  "source": "list_dir",
+  "descriptor": "[artifact <pending>, 5290 bytes] preview: {   \"name\": \"AdaptivePathExpansionandDynamicLeading .pdf\",   \"type\": \"file\",   \"size_bytes\": 7366536 } {   \"name\": \"AmiryarandPullenA Review of Flywheel Energy Storage System_applsci-07-00286.pdf\",   \"type\": \"file\",   \"size_bytes\": 1084839 } {   \"name\": \"A",
+  "created_at": 1780037865.0714493
+}

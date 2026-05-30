@@ -1,0 +1,40 @@
+{
+  "memory_id": "f176a226-5c55-4f02-91c7-e0fa1d8cc7b1",
+  "source": "user_query",
+  "preview": "Algorithmic frameworks for predictive propulsion system failure diagnostics",
+  "text": "Algorithmic frameworks for predictive propulsion system failure diagnostics",
+  "metadata": {},
+  "score": 0.9642252326011658
+}
+{
+  "memory_id": "89936e13-728e-439b-845a-88286c9e451e",
+  "source": "corpus/Autonomousdrones-part-3.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-3.md chunk 3/3] parameters which are Proportional ‘P’ which represents curre",
+  "text": "parameters which are Proportional ‘P’ which represents current error, Integral ‘I’ represents accumulated error and Derivative ‘D’ that forecasts the forthcoming error [30]. PID helps introduce corrections based on errors between the reference and actual position allowing a stable flight time [30]. Beyond a stable flight, accurate control and dynamic yet precise manoeuvres with dynamically generated trajectories that are feasible and smooth become critical for complex applications [31]. Advancements in the microcontroller and microcontroller architecture of the flight-controllers allowed many advancements. These advancements in flight controllers, sensor integration, and trajectory mapping collectively contribute to the overall autonomy and performance of drones, making them versatile and reliable tools across various applications [32]. 3",
+  "metadata": {},
+  "score": 0.6692623496055603
+}
+{
+  "memory_id": "ac25387f-79f3-40b4-afca-4c59d160d81a",
+  "source": "corpus/Autonomousdrones-part-3.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-3.md chunk 3/3] parameters which are Proportional ‘P’ which represents curre",
+  "text": "parameters which are Proportional ‘P’ which represents current error, Integral ‘I’ represents accumulated error and Derivative ‘D’ that forecasts the forthcoming error [30]. PID helps introduce corrections based on errors between the reference and actual position allowing a stable flight time [30]. Beyond a stable flight, accurate control and dynamic yet precise manoeuvres with dynamically generated trajectories that are feasible and smooth become critical for complex applications [31]. Advancements in the microcontroller and microcontroller architecture of the flight-controllers allowed many advancements. These advancements in flight controllers, sensor integration, and trajectory mapping collectively contribute to the overall autonomy and performance of drones, making them versatile and reliable tools across various applications [32]. 3",
+  "metadata": {},
+  "score": 0.6692623496055603
+}
+{
+  "memory_id": "2256dd2b-61c0-453a-a937-6e9178aef356",
+  "source": "corpus/Autonomousdrones-part-3.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-3.md chunk 3/3] parameters which are Proportional ‘P’ which represents curre",
+  "text": "parameters which are Proportional ‘P’ which represents current error, Integral ‘I’ represents accumulated error and Derivative ‘D’ that forecasts the forthcoming error [30]. PID helps introduce corrections based on errors between the reference and actual position allowing a stable flight time [30]. Beyond a stable flight, accurate control and dynamic yet precise manoeuvres with dynamically generated trajectories that are feasible and smooth become critical for complex applications [31]. Advancements in the microcontroller and microcontroller architecture of the flight-controllers allowed many advancements. These advancements in flight controllers, sensor integration, and trajectory mapping collectively contribute to the overall autonomy and performance of drones, making them versatile and reliable tools across various applications [32]. 3",
+  "metadata": {},
+  "score": 0.6692623496055603
+}
+{
+  "memory_id": "2976005f-64b7-43d7-9d58-8eff677109c9",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.6629011631011963
+}

@@ -1,0 +1,40 @@
+{
+  "memory_id": "0b61438c-94f0-4869-a6df-5d91141eac61",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper?",
+  "metadata": {},
+  "score": 0.8639845252037048
+}
+{
+  "memory_id": "f8528715-0b17-40b4-8670-d200a832dab3",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.8639845252037048
+}
+{
+  "memory_id": "1156b229-9ae2-4919-bbcb-6bf67fd5e69d",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.8639845252037048
+}
+{
+  "memory_id": "ca80111b-34a3-4ea2-9077-5f620d45046a",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.8639845252037048
+}
+{
+  "memory_id": "1441ee90-2492-4300-ad19-b400245042ed",
+  "source": "corpus/Designofflywheelenergystoragedevice-part-2.md",
+  "preview": "[sandbox:corpus/Designofflywheelenergystoragedevice-part-2.md chunk 1/5] 785 In the 1970s, the US Department of Energy proposed the S",
+  "text": "785 In the 1970s, the US Department of Energy proposed the Super Flywheel energy storage program for vehicle power to vigorously study the flywheel technology with high energy density [40]. The flywheel can assist the hybrid drivetrain to meet the large peak power demand of heavy vehicles effectively. The Kinerstor Project aims to build and test fully at rig level a kinetic energy store, and its innovation lies in the design of the magnetic gears [40]. Tribology Systems, Inc. has developed a patented bearing and a fully mechanized rotor dynamics control system [40]. The University of Texas at Austin designed, manufactured and tested a composite flywheel battery [40]. Williams Hybrid Power Ltd (WHP) develops and manufactures electro-mechanical composite flywheel systems. WHP’s flywheel solution employs its unique and patented “Magnetically Loaded Composite Material” (MLC) technology [40]. Although these companies have made innovative contributions in terms of flywheel materials, bearings or magnetic flywheels, this paper designs a high specific energy flywheel device from the perspective of multi-level flywheels. Under typical urban driving conditions, the flywheel can provide quite high auxiliary power to the vehicle for a short time during acceleration and hill climbing. During regenerative braking, the flywheel absorbs regenerative braking power much more efficiently than the battery alone. When the power required to drive the vehicle is lower than that provided by the vehicle’s main power source, the excess energy can be absorbed by the flywheel. The power load balancing ability of the flywheel is vitally important for energy/power conversion and management. For automotive application of the flywheel, it is particularly important to explore how to increase the moment of inertia of the flywheel as much as possible while ensuring that the overall mass increase is minimal. In this paper, a multistage flywheel energy storage device was designed to improve the energy density and power density of the flywheel, and the parameters of both first stage and the second stage flywheel were selected reasonably, which provided a theoretical basis and design method for designing and analyzing of the multistage flywheel energy storage device. ## **2. Flywheel energy storage characteristics** As a rotating mechanical element, the physics of the flywheel is simple. The flywheel gains momentum after applying torque and begins to rotate, and the rotor continues to rotate after the initial torque is removed. After overcoming the friction force and air resistance of the bearing, the remaining kinetic energy drives the",
+  "metadata": {},
+  "score": 0.765690267086029
+}

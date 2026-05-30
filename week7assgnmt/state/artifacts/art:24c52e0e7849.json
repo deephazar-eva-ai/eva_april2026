@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:24c52e0e7849",
+  "sha256": "24c52e0e7849ec48f36e12b3e588367a294085cf9576d973e1d86de9547858de",
+  "size_bytes": 12563,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 12563 bytes] preview: {   \"memory_id\": \"b52c8b77-2b44-4e0e-af91-36d1067969cf\",   \"source\": \"user_query\",   \"preview\": \"tell me more about specific energy value\",   \"text\": \"tell me more about specific energy value\",   \"metadata\": {},   \"score\": 0.7818171977996826 } {   \"memory_",
+  "created_at": 1780132559.0178165
+}

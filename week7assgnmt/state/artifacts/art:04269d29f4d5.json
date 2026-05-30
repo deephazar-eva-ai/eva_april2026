@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:04269d29f4d5",
+  "sha256": "04269d29f4d5a0f46de2885a6567add3b3c6f5ed722a66cc336c623cf66c4777",
+  "size_bytes": 12989,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 12989 bytes] preview: {   \"memory_id\": \"198b157a-8789-4f64-8dd4-f98944877aef\",   \"source\": \"papers/attention.md\",   \"preview\": \"[sandbox:papers/attention.md chunk 3/3] Smart Citations?](https://www.scite.ai/))_ Code, Data, Media\",   \"text\": \"Smart Citations?](https://www.scite.",
+  "created_at": 1780046825.45659
+}

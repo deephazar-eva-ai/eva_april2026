@@ -1,0 +1,40 @@
+{
+  "memory_id": "2976005f-64b7-43d7-9d58-8eff677109c9",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.7703009247779846
+}
+{
+  "memory_id": "454446fd-0444-4cb9-9098-0790f662bbdf",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.7703009247779846
+}
+{
+  "memory_id": "30ba1161-ff04-4343-8996-445c4413a62d",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.7703009247779846
+}
+{
+  "memory_id": "f176a226-5c55-4f02-91c7-e0fa1d8cc7b1",
+  "source": "user_query",
+  "preview": "Algorithmic frameworks for predictive propulsion system failure diagnostics",
+  "text": "Algorithmic frameworks for predictive propulsion system failure diagnostics",
+  "metadata": {},
+  "score": 0.6611570715904236
+}
+{
+  "memory_id": "827e8275-9f56-4397-9a93-159ff99ce228",
+  "source": "user_query",
+  "preview": "Methods for managing brush-free propulsion system overheating and maintaining st",
+  "text": "Methods for managing brush-free propulsion system overheating and maintaining stability",
+  "metadata": {},
+  "score": 0.6599636673927307
+}

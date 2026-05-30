@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:93452db12b00",
+  "sha256": "93452db12b003e3379ac9ff3dcb2b5b7fad55b45af976409cd1491b630627879",
+  "size_bytes": 21797,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 21797 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 21473,   \"text\": \"[](https://www.instagram.com/thetokyochapter/ \\\"Instagram\\\")[](https://www.pinterest.jp/thetokyochapter/ \\\"Pinterest\\\")[](https://www.facebook.com/thetokyochapter/ \\\"",
+  "created_at": 1779362401.9914796
+}

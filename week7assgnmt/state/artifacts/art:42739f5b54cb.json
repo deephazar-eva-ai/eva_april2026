@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:42739f5b54cb",
+  "sha256": "42739f5b54cb96f2aa638c0272015cf31c6e02b068620f8514c9e6f271a6a5bc",
+  "size_bytes": 5956,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 5956 bytes] preview: {   \"path\": \"corpus/Autonomousdrones-part-2.md\",   \"size_bytes\": 5825,   \"content\": \"_G.R. Bhat et al.",
+  "created_at": 1780078602.8905663
+}

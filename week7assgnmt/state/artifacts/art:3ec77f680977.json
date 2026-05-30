@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:3ec77f680977",
+  "sha256": "3ec77f6809774cebb871ed791b38d97fadb4dfd03dfcf9ef99eec0ea4cd70074",
+  "size_bytes": 10461,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 10461 bytes] preview: {   \"memory_id\": \"d4058318-8bf5-4460-8d99-6fad9da9cd97\",   \"source\": \"user_query\",   \"preview\": \"Wireless network protocol vulnerabilities, decentralized multi-agent communicati\",   \"text\": \"Wireless network protocol vulnerabilities, decentralized multi-ag",
+  "created_at": 1780079562.346781
+}

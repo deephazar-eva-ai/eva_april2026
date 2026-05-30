@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:f02f334b5ca3",
+  "sha256": "f02f334b5ca3f215d55af6132a6a2dc92e768d9225050af6979ed43923d2f1a5",
+  "size_bytes": 6949,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 6949 bytes] preview: {   \"memory_id\": \"a976c70d-40f7-432b-8747-abe25592a9d0\",   \"source\": \"user_query\",   \"preview\": \"How do payload-induced thermal risks in drone BLDC motors compare to the high-ve\",   \"text\": \"How do payload-induced thermal risks in drone BLDC motors compare",
+  "created_at": 1780114423.669968
+}

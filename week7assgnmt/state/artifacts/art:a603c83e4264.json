@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:a603c83e4264",
+  "sha256": "a603c83e426477f8db7d913b848877e0ab35df7c7f721563b84f20c9b28ef52f",
+  "size_bytes": 36333,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 36333 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 35616,   \"text\": \"[Skip to content](https://explorejapannow.com/things-to-do-in-tokyo-with-kids-family-guide/#content \\\"Skip to content\\\")\\n[ExploreJapanNow.com](https://explorejapanno",
+  "created_at": 1779456429.1414855
+}

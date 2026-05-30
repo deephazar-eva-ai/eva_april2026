@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:a6dc3b99ea2e",
+  "sha256": "a6dc3b99ea2e13c86431d6ec7e9dbc96ef69c656cbd4eea8f2052dd69e09be93",
+  "size_bytes": 12113,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 12113 bytes] preview: {   \"memory_id\": \"d73d1202-3997-47ae-8929-42bca30386a8\",   \"source\": \"user_query\",   \"preview\": \"what is the role of BLDC motor in autonomous drone?\",   \"text\": \"what is the role of BLDC motor in autonomous drone?\",   \"metadata\": {},   \"score\": 0.992034614",
+  "created_at": 1780078587.2855911
+}

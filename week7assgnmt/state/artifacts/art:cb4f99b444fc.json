@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:cb4f99b444fc",
+  "sha256": "cb4f99b444fc1d3b22a55f0f21cc6b38a22195f69d580c14e7da7e226c20191c",
+  "size_bytes": 15782,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 15782 bytes] preview: {   \"path\": \"corpus/GrapheneSupercapacitors-part-2.md\",   \"size_bytes\": 15569,   \"content\": \"**View Article Online** \\n\\nMaterials Advances \\n\\n: \\n\\n## Review \\n\\nin peak positions in CV curves.[49] The corresponding galvanostatic charge–discharge (GCD) c",
+  "created_at": 1780103334.5598443
+}

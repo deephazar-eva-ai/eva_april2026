@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:5eef2d3fa35a",
+  "sha256": "5eef2d3fa35afc616337640ebb489c0caf450939ab34b672b9240c1dc7e16590",
+  "size_bytes": 14902,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 14902 bytes] preview: {   \"memory_id\": \"0f91c304-601d-4d7c-8dda-e41521be4282\",   \"source\": \"corpus/Designofflywheelenergystoragedevice-part-2.md\",   \"preview\": \"[sandbox:corpus/Designofflywheelenergystoragedevice-part-2.md chunk 4/5] factor ( _K_ ) of different cross section ge",
+  "created_at": 1780114367.088581
+}

@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:ff2b3ea79cec",
+  "sha256": "ff2b3ea79ceca14f806154f222dedf44c0a1852414e9db50fd4dc75fd66b280a",
+  "size_bytes": 8739,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 8739 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 8431,   \"text\": \"[](https://wisemeteo.com/ \\\"Logo\\\")\\nEn \\n  * En\\n  * [De](https://wisemeteo.com/de/country/japan/region/tokyo/city/tokyo/date/05-23)\\n  * [Укр](https://wisemeteo.com/",
+  "created_at": 1779457918.606811
+}

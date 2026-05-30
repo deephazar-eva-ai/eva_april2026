@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:155565d03667",
+  "sha256": "155565d03667f9fa6369aff780d154235b8e307b7b4392b2cd9eaaa4f52e60d7",
+  "size_bytes": 100081,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 100081 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 99150,   \"text\": \"[Skip to content](https://www.planmyjapan.com/tokyo-with-kids-things-to-do/#main)\\n[ ![Plan My Japan](https://www.planmyjapan.com/wp-content/uploads/2021/12/pmj-logo-",
+  "created_at": 1779362973.5399847
+}

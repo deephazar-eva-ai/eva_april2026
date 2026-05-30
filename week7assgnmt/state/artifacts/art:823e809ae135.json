@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:823e809ae135",
+  "sha256": "823e809ae13582b760320eca5350781cecba3aa6457e22b11009c78eb00c44b5",
+  "size_bytes": 14608,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 14608 bytes] preview: {   \"memory_id\": \"9a79b9ce-cb66-4a20-8c4b-cbe1b33c0be9\",   \"source\": \"user_query\",   \"preview\": \"If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-\",   \"text\": \"If a scheduling algorithm hits an unexpected delay, how does a ℵ-",
+  "created_at": 1780113543.930613
+}

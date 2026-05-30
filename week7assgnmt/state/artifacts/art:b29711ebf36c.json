@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:b29711ebf36c",
+  "sha256": "b29711ebf36cf901942a6daedbf10702c26e2ca05347dd53a081371501737d1e",
+  "size_bytes": 20080,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 20080 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 19937,   \"text\": \"[Skip to main content](https://www.getyourguide.com/#main-content-wrapper)\\n[![Get Your Guide logo](data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2",
+  "created_at": 1779454901.4325817
+}

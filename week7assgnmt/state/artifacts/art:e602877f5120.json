@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:e602877f5120",
+  "sha256": "e602877f51204590f15f6b0a5da402be82da157e6f470cbc13a2c1cd3783979a",
+  "size_bytes": 8314,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 8314 bytes] preview: {   \"path\": \"corpus/mitigatingdeception-part-2.md\",   \"size_bytes\": 8162,   \"content\": \"ℵ-IPOMDP • 14:3 \\n\\nFig. 1. **Paper overview** : **(Cognitive Hierarchy:)** We model agents with finite recursive opponent modelling with different Depth of Mentalising",
+  "created_at": 1780104126.1609774
+}

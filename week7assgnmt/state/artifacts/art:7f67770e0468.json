@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:7f67770e0468",
+  "sha256": "7f67770e046858759b19180eb0abf13aca7bbc7b4ebc17d511b256e9662c5804",
+  "size_bytes": 9562,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 9562 bytes] preview: {   \"memory_id\": \"5381ec88-3ae9-46ac-8f16-e04dae23bfab\",   \"source\": \"user_query\",   \"preview\": \"What are the exact maximum minutes allowed for unpaid rest (upmaxs​) under both \",   \"text\": \"What are the exact maximum minutes allowed for unpaid rest (upmax",
+  "created_at": 1780134612.452699
+}

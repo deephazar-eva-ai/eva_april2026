@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:d3fca44cd504",
+  "sha256": "d3fca44cd504b0428f4366cf3788e3d0959ac933793ef694ebf8f3f490ee0137",
+  "size_bytes": 4905,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 4905 bytes] preview: {   \"memory_id\": \"0b61438c-94f0-4869-a6df-5d91141eac61\",   \"source\": \"user_query\",   \"preview\": \"What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh\",   \"text\": \"What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epo",
+  "created_at": 1780135751.198208
+}

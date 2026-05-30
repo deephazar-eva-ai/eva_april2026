@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:eebe20b2f3cf",
+  "sha256": "eebe20b2f3cfdb42cab4327faba2b3af82de9c142adcc6a51e9d2bbf2f7ee8af",
+  "size_bytes": 9766,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 9766 bytes] preview: {   \"path\": \"corpus/Designofflywheelenergystoragedevice-part-2.md\",   \"size_bytes\": 9530,   \"content\": \"785 \\n\\nIn the 1970s, the US Department of Energy proposed the Super Flywheel energy storage program for vehicle power to vigorously study the flywheel",
+  "created_at": 1780103092.3664663
+}

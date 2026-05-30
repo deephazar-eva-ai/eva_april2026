@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:6a0278ca3a7d",
+  "sha256": "6a0278ca3a7d0f8012497816fdf992175e835891524b436e3eed890716d61076",
+  "size_bytes": 58925,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 58925 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 58460,   \"text\": \"[ Skip to content](https://backyardtravelfamily.com/things-to-do-with-kids-in-tokyo/#content \\\"Skip to content\\\")\\nSearch\\n[ ![](https://backyardtravelfamily.com/wp-c",
+  "created_at": 1779362430.5757337
+}
