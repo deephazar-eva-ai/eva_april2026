@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:38bdb37063f9",
+  "sha256": "38bdb37063f95bb37d80eaabc229abf8725a268edb3815f0ac0d190565b79089",
+  "size_bytes": 29396,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 29396 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 28888,   \"text\": \"[ All Cities  ](https://tokyocheapo.com/entertainment/family/)\\n  * [Japan](https://japancheapo.com/)\\n  * [Hong Kong](https://hongkongcheapo.com/)\\n  * [London](http",
+  "created_at": 1779408773.7428846
+}

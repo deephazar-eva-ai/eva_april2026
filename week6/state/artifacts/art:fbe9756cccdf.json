@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:fbe9756cccdf",
+  "sha256": "fbe9756cccdf7d7446a164349aea022578b3fe1fff8f04b338e2c71ff725f131",
+  "size_bytes": 36809,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 36809 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 35996,   \"text\": \"[ Facebook ](https://www.facebook.com/61583965976704/ \\\"Facebook\\\") [ Instagram ](https://www.instagram.com/tokyoparents/ \\\"Instagram\\\") [ Linkedin ](https://www.link",
+  "created_at": 1779406895.441039
+}

@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:872dee5b78b6",
+  "sha256": "872dee5b78b6c650b3a9f98f88accbf6741c73ea7a775603a2a4292482c7e532",
+  "size_bytes": 78736,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 78736 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 77406,   \"text\": \"[ ![Real Python](https://realpython.com/static/real-python-logo.893c30edea53.svg) ](https://realpython.com/)\\n  * [Start Here](https://realpython.com/start-here/)\\n",
+  "created_at": 1779437524.7728987
+}

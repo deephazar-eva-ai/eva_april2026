@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:737da1c49e30",
+  "sha256": "737da1c49e300e765d6ac3bd6861df197d29845a58184ce358058ab3672e5d9a",
+  "size_bytes": 10367,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 10367 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 10024,   \"text\": \"[World Weather](https://world-weather.info)\\nAdd the current city\\nSearch\\n  * Weather\\n  * [Archive](https://world-weather.info/archive/)\\n  * [Widget](https://world",
+  "created_at": 1779451975.2079806
+}

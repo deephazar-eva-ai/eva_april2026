@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:53ce81dbbffa",
+  "sha256": "53ce81dbbffa636f4fa93a74ca4b1887078f0f52fb7d64b4743ef9f3128315cc",
+  "size_bytes": 54365,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 54365 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 53439,   \"text\": \"Hamburger [ The Weather Company ](https://weather.com/)\\n  * [ Home Home](https://weather.com/)\\nHome\\n  * [ Today Today](https://weather.com/weather/today/l/a2d49e31",
+  "created_at": 1779407226.5356324
+}
