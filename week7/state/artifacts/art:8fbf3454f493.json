@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:8fbf3454f493",
+  "sha256": "8fbf3454f493d82f50c29e8c8d81bbc6fe6869e787b5c749a23a7a6b544eca2d",
+  "size_bytes": 10507,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 10507 bytes] preview: {   \"path\": \"papers/cot.md\",   \"size_bytes\": 10235,   \"content\": \"[Skip to main content](https://arxiv.org/abs/2201.11903#content)\\n[![Cornell University](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.c",
+  "created_at": 1780058149.7486277
+}

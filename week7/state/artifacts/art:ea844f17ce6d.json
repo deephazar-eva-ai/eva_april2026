@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:ea844f17ce6d",
+  "sha256": "ea844f17ce6d1a58e1a3b736e4aaa2efa4965edd6f0dfce642043d59174623d9",
+  "size_bytes": 6644,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 6644 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 6451,   \"text\": \"[ Skip to main content ](https://discuss.python.org/t/asyncio-best-practices/12576#main-container)\\n[ ![Discussions on Python.org](https://us1.discourse-cdn.com/flex00",
+  "created_at": 1779438612.669669
+}

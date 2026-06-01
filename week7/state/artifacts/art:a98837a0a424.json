@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:a98837a0a424",
+  "sha256": "a98837a0a4247b9d21daaaaf1311f407b2f7eeafde38aa45670979c4a22a122f",
+  "size_bytes": 13139,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 13139 bytes] preview: {   \"memory_id\": \"97e9bb96-b0c1-4050-9c8e-72076f3e7b17\",   \"source\": \"user_query\",   \"preview\": \"Index the file papers/attention.md and tell me what the three keycontributions o\",   \"text\": \"Index the file papers/attention.md and tell me what the three key",
+  "created_at": 1780037454.8847537
+}

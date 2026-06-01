@@ -1,0 +1,40 @@
+{
+  "memory_id": "5381ec88-3ae9-46ac-8f16-e04dae23bfab",
+  "source": "user_query",
+  "preview": "What are the exact maximum minutes allowed for unpaid rest (upmaxs​) under both ",
+  "text": "What are the exact maximum minutes allowed for unpaid rest (upmaxs​) under both conditions in the driver paper?",
+  "metadata": {},
+  "score": 0.7438995242118835
+}
+{
+  "memory_id": "01e32282-a952-4ee9-8e76-4fd4f24b8b7e",
+  "source": "corpus/LargeNeighborhoodSearch-part-2.md",
+  "preview": "[sandbox:corpus/LargeNeighborhoodSearch-part-2.md chunk 6/7] Search for Bus Driver Scheduling with Complex Break Constrai",
+  "text": "Search for Bus Driver Scheduling with Complex Break Constraints • 44:7 Rest breaks may be split into smaller parts. One part must be at least 30 min, and any additional at least 15 min. The first part must occur within the first 6 h of working time. If there is a section of a rest break of at least 15 min which is not located within the first two or last two hours of the shift, this section is considered _unpaid_ (up to a maximum), as shown in Figure 2. We denote by _unpaid𝑠_ the sum of the length of potentially unpaid rest breaks. |2 h|2 h|2 h||2 h| |---|---|---|---|---| |paid rest|unpaid rest|||paid rest| |3 h||centred||3 h| |30 min break||||| Fig. 2. Rest break positioning (Kletzander and Musliu 2020) The maximum amount of unpaid rest is limited, as shown in Figure 2: - If a consecutive part of a rest break of at least 30 minutes is located such that it does not intersect the first 3 h of the shift or the last 3 h of the shift, at most 1.5 h of unpaid rest is allowed and therefore we set _upmax𝑠_ = 90; - Otherwise, at most one hour of unpaid rest is allowed, and therefore we set _upmax𝑠_ = 60. Rest breaks beyond this limit are paid. - _3.3.5 Working Time._ **==> picture [379 x 26] intentionally omitted <==** Equation (7) defines the _working time_ of a shift _𝑠_ . Equation (8) sets the upper bound of _𝑊𝑠_ as 10 h. A minimum rest break is required according to the following options: - _𝑊𝑠 <_ 6 h: no rest break required; - 6 h ≤ _𝑊𝑠_ ≤ 9 h: at least 30-minute break; - _𝑊𝑠 >_ 9 h: at least 45-minute break. ## **3.4 Objective Function** Let _𝑆_ be a solution. The objective function to minimize is defined as follows (Kletzander and Musliu 2020): **==> picture [337 x 23] intentionally omitted <==** where, for every shift _𝑠_ ∈ _𝑆_ : - _𝑊𝑠_[′][=][ max][{] _[𝑊][𝑠][,]_[ 390][}][, where] _[ 𝑊][𝑠]_[is the working time defined by][ Equation (7)][. This objective ensures that] drivers are paid for at least _𝑊_ min = 6 _._ 5 hours (390 minutes). - _𝑇𝑠_ is the total time of the shift as defined in Equation (1). - _ride𝑠_ is the sum of passive ride times between consecutive legs. - _change𝑠_ is the number of _tour",
+  "metadata": {},
+  "score": 0.6975429058074951
+}
+{
+  "memory_id": "85443a78-633a-43be-94c2-ed7a89d81c21",
+  "source": "corpus/LargeNeighborhoodSearch-part-2.md",
+  "preview": "[sandbox:corpus/LargeNeighborhoodSearch-part-2.md chunk 7/7] x 23] intentionally omitted <==** where, for every shift _𝑠_",
+  "text": "x 23] intentionally omitted <==** where, for every shift _𝑠_ ∈ _𝑆_ : - _𝑊𝑠_[′][=][ max][{] _[𝑊][𝑠][,]_[ 390][}][, where] _[ 𝑊][𝑠]_[is the working time defined by][ Equation (7)][. This objective ensures that] drivers are paid for at least _𝑊_ min = 6 _._ 5 hours (390 minutes). - _𝑇𝑠_ is the total time of the shift as defined in Equation (1). - _ride𝑠_ is the sum of passive ride times between consecutive legs. - _change𝑠_ is the number of _tour changes_ , i.e., the number of occurrences of consecutive bus legs _𝑖, 𝑗_ ∈ _𝑠_ with _tour𝑖_ ≠ _tour 𝑗_ . - _split𝑠_ is the number of shift splits, as defined in Section 3.3.3. The weights were determined by previous work (Kletzander and Musliu 2020) based on preferences agreed by different stakeholders at Austrian bus companies and employee scheduling experts. Journal of Artificial Intelligence Research, Vol. 85, Article 44. Publication date: April 2026.",
+  "metadata": {},
+  "score": 0.6966978907585144
+}
+{
+  "memory_id": "6adfe54d-2818-49a4-aea3-0b255ebc62cd",
+  "source": "corpus/LargeNeighborhoodSearch-part-2.md",
+  "preview": "[sandbox:corpus/LargeNeighborhoodSearch-part-2.md chunk 3/7] ( _𝐿,_ ⪯) is a totally ordered set. □ Henceforth, all time q",
+  "text": "( _𝐿,_ ⪯) is a totally ordered set. □ Henceforth, all time quantities are expressed in minutes unless otherwise noted. Table 1 shows a short example of one particular bus tour. The vehicle starts at time 400 (6:40 AM) at position 0, does multiple bus legs between positions 1 and 2 with waiting times in between and finally returns to position 0. Within the same vehicle’s tour, bus legs do not overlap in time. Moreover, consecutive bus legs are consecutive in space, satisfying _endPos𝑖_ = _startPos𝑖_ +1. A tour change occurs when a driver has an assignment of two consecutive bus legs _𝑖_ and _𝑗_ with _tour𝑖_ ≠ _tour 𝑗_ . ## **3.2 Solution** A solution _𝑆_ to the BDSP is an assignment of drivers to bus legs. Formally, it is represented as a partition of the set _𝐿_ into disjoint subsets, expressed as _𝑆_ = { _𝑠_ 1 _,𝑠_ 2 _, . . . ,𝑠𝑛_ }. Each block _𝑠𝑖_ is called a **shift** . In practical terms, a _shift_ corresponds to the work scheduled to be performed by a driver in one day (Wren 2004). For a given shift _𝑠_ , we denote _𝐿𝑠_ ⊆ _𝐿_ as the subset of bus legs assigned to _𝑠_ . While _𝑠_ and _𝐿𝑠_ are mathematically equivalent, we conceptually distinguish them: _𝐿𝑠_ represents only a set of bus legs, whereas _𝑠_ also contains additional details such as breaks, passive ride time, etc. This additional information is uniquely determined by the set of bus legs _𝐿𝑠_ . Thus, the reader may treat _𝑠_ and _𝐿𝑠_ interchangeably, if it is convenient. Note that a priori, the number of shifts of a solution | _𝑆_ | is not given. Nevertheless, we may set it as large as necessary to get a feasible solution. An immediate upper bound is | _𝑆_ | ≤| _𝐿_ |. This represents the situation in which each shift is composed of only one leg. Note that, since the set _𝐿_ is totally ordered (Lemma 1), the notion of _consecutive_ bus legs in a shift is well-defined. Moreover, a solution is also totally ordered by the order induced by the bus legs. A solution _𝑆_ is feasible if each of its shifts _𝑠_ ∈ _𝑆_ satisfies the following criteria: - Changing tour or position between consecutive bus legs _𝑖, 𝑗_ ∈ _𝑠_ requires **==> picture [122 x 11] intentionally omitted <==** This implies",
+  "metadata": {},
+  "score": 0.6518226861953735
+}
+{
+  "memory_id": "f8528715-0b17-40b4-8670-d200a832dab3",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.6323750615119934
+}

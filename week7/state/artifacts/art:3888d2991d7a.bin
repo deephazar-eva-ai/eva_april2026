@@ -1,0 +1,40 @@
+{
+  "memory_id": "5381ec88-3ae9-46ac-8f16-e04dae23bfab",
+  "source": "user_query",
+  "preview": "What are the exact maximum minutes allowed for unpaid rest (upmaxs​) under both ",
+  "text": "What are the exact maximum minutes allowed for unpaid rest (upmaxs​) under both conditions in the driver paper?",
+  "metadata": {},
+  "score": 0.7071738839149475
+}
+{
+  "memory_id": "01e32282-a952-4ee9-8e76-4fd4f24b8b7e",
+  "source": "corpus/LargeNeighborhoodSearch-part-2.md",
+  "preview": "[sandbox:corpus/LargeNeighborhoodSearch-part-2.md chunk 6/7] Search for Bus Driver Scheduling with Complex Break Constrai",
+  "text": "Search for Bus Driver Scheduling with Complex Break Constraints • 44:7 Rest breaks may be split into smaller parts. One part must be at least 30 min, and any additional at least 15 min. The first part must occur within the first 6 h of working time. If there is a section of a rest break of at least 15 min which is not located within the first two or last two hours of the shift, this section is considered _unpaid_ (up to a maximum), as shown in Figure 2. We denote by _unpaid𝑠_ the sum of the length of potentially unpaid rest breaks. |2 h|2 h|2 h||2 h| |---|---|---|---|---| |paid rest|unpaid rest|||paid rest| |3 h||centred||3 h| |30 min break||||| Fig. 2. Rest break positioning (Kletzander and Musliu 2020) The maximum amount of unpaid rest is limited, as shown in Figure 2: - If a consecutive part of a rest break of at least 30 minutes is located such that it does not intersect the first 3 h of the shift or the last 3 h of the shift, at most 1.5 h of unpaid rest is allowed and therefore we set _upmax𝑠_ = 90; - Otherwise, at most one hour of unpaid rest is allowed, and therefore we set _upmax𝑠_ = 60. Rest breaks beyond this limit are paid. - _3.3.5 Working Time._ **==> picture [379 x 26] intentionally omitted <==** Equation (7) defines the _working time_ of a shift _𝑠_ . Equation (8) sets the upper bound of _𝑊𝑠_ as 10 h. A minimum rest break is required according to the following options: - _𝑊𝑠 <_ 6 h: no rest break required; - 6 h ≤ _𝑊𝑠_ ≤ 9 h: at least 30-minute break; - _𝑊𝑠 >_ 9 h: at least 45-minute break. ## **3.4 Objective Function** Let _𝑆_ be a solution. The objective function to minimize is defined as follows (Kletzander and Musliu 2020): **==> picture [337 x 23] intentionally omitted <==** where, for every shift _𝑠_ ∈ _𝑆_ : - _𝑊𝑠_[′][=][ max][{] _[𝑊][𝑠][,]_[ 390][}][, where] _[ 𝑊][𝑠]_[is the working time defined by][ Equation (7)][. This objective ensures that] drivers are paid for at least _𝑊_ min = 6 _._ 5 hours (390 minutes). - _𝑇𝑠_ is the total time of the shift as defined in Equation (1). - _ride𝑠_ is the sum of passive ride times between consecutive legs. - _change𝑠_ is the number of _tour",
+  "metadata": {},
+  "score": 0.6629254817962646
+}
+{
+  "memory_id": "85443a78-633a-43be-94c2-ed7a89d81c21",
+  "source": "corpus/LargeNeighborhoodSearch-part-2.md",
+  "preview": "[sandbox:corpus/LargeNeighborhoodSearch-part-2.md chunk 7/7] x 23] intentionally omitted <==** where, for every shift _𝑠_",
+  "text": "x 23] intentionally omitted <==** where, for every shift _𝑠_ ∈ _𝑆_ : - _𝑊𝑠_[′][=][ max][{] _[𝑊][𝑠][,]_[ 390][}][, where] _[ 𝑊][𝑠]_[is the working time defined by][ Equation (7)][. This objective ensures that] drivers are paid for at least _𝑊_ min = 6 _._ 5 hours (390 minutes). - _𝑇𝑠_ is the total time of the shift as defined in Equation (1). - _ride𝑠_ is the sum of passive ride times between consecutive legs. - _change𝑠_ is the number of _tour changes_ , i.e., the number of occurrences of consecutive bus legs _𝑖, 𝑗_ ∈ _𝑠_ with _tour𝑖_ ≠ _tour 𝑗_ . - _split𝑠_ is the number of shift splits, as defined in Section 3.3.3. The weights were determined by previous work (Kletzander and Musliu 2020) based on preferences agreed by different stakeholders at Austrian bus companies and employee scheduling experts. Journal of Artificial Intelligence Research, Vol. 85, Article 44. Publication date: April 2026.",
+  "metadata": {},
+  "score": 0.660800039768219
+}
+{
+  "memory_id": "9a79b9ce-cb66-4a20-8c4b-cbe1b33c0be9",
+  "source": "user_query",
+  "preview": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-",
+  "text": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-detection mechanism differentiate between a rigid regulatory limit (e.g., Austrian labor caps) and deliberate external deception?",
+  "metadata": {},
+  "score": 0.606839120388031
+}
+{
+  "memory_id": "91d778fd-6faa-456a-9b87-d87c9919308d",
+  "source": "user_query",
+  "preview": " If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly",
+  "text": " If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-detection mechanism differentiate between a rigid regulatory limit (e.g., Austrian labor caps) and deliberate external deception?",
+  "metadata": {},
+  "score": 0.6021818518638611
+}

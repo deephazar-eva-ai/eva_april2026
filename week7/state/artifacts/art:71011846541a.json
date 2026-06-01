@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:71011846541a",
+  "sha256": "71011846541a7f0e1bef583cc8acd3689602e64eeb112f9c1a15bc7d465d66fb",
+  "size_bytes": 14898,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 14898 bytes] preview: {   \"memory_id\": \"ad13cde9-0b02-4711-8557-e3b71a0136d5\",   \"source\": \"corpus/Designofflywheelenergystoragedevice-part-2.md\",   \"preview\": \"[sandbox:corpus/Designofflywheelenergystoragedevice-part-2.md chunk 3/5] x 192] intentionally omitted <==** **----- S",
+  "created_at": 1780105293.3617353
+}

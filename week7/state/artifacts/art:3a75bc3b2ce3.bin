@@ -1,0 +1,40 @@
+{
+  "memory_id": "91d778fd-6faa-456a-9b87-d87c9919308d",
+  "source": "user_query",
+  "preview": " If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly",
+  "text": " If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-detection mechanism differentiate between a rigid regulatory limit (e.g., Austrian labor caps) and deliberate external deception?",
+  "metadata": {},
+  "score": 0.8170585632324219
+}
+{
+  "memory_id": "9a79b9ce-cb66-4a20-8c4b-cbe1b33c0be9",
+  "source": "user_query",
+  "preview": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-",
+  "text": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-detection mechanism differentiate between a rigid regulatory limit (e.g., Austrian labor caps) and deliberate external deception?",
+  "metadata": {},
+  "score": 0.8156243562698364
+}
+{
+  "memory_id": "98d95f1b-db16-44b1-b37b-34659536a262",
+  "source": "corpus/GrapheneSupercapacitors-part-2.md",
+  "preview": "[sandbox:corpus/GrapheneSupercapacitors-part-2.md chunk 7/7] and rate performance by providing greater access to active s",
+  "text": "and rate performance by providing greater access to active sites and promoting efficient diffusion of hydrated Zn[2+] ions. In Fig. 2, L-CNS and L-NS-CNS represent ligninderived CNS and lignin-derived nitrogen/sulfur doped CNS having pore sizes 1–2.75 nm and 7–50 nm, respectively.[98] ## 4.1 Graphene and it’s derivatives Nanotechnology has evolved very vastly in sense of scientific exploration which offers immense potential across various domains. In the aspect of nanomaterials, each material with specific structural forms, surface characteristics, chemical compositions, and crystallographic arrangements has been engineered to meet the demands of specific applications such as energy storage. These tailored features enhance the stability, energy/power density and capacitance making nanomaterials indispensable in the development of advanced and reliable Fig. 2 SEM images of (a) L-CNS, (b) L-N-CNS, (c) L-NS-CNS. (d) N2 adsorption/desorption isotherms, (e) pore size distributions. Electrochemical performances of L-CNS, L-N-CNS, and L-NS-CNS as the cathodes of ZIHCs: (f) CV curves at a scan rate of 1 mV s 1 (g) specific capacitances at scan rates ranging from 1 to 200 mV s 1. Capacitive contribution calculated at a scan rate of 2 mV s 1 for (h) L-CNS, (i) L-N-CNS, and (j) L-NS-CNS, respectively. Reproduced with permission.[98] 88 | _Mater. Adv._ , 2026, 7, 83–108 © 2026 The Author(s). Published by the Royal Society of Chemistry",
+  "metadata": {},
+  "score": 0.6047379970550537
+}
+{
+  "memory_id": "fdd7ba9b-944b-46fe-9767-2087fab2ce84",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.6044826507568359
+}
+{
+  "memory_id": "b2370a59-fc3b-4211-a30f-d5c7025b18fe",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.6044826507568359
+}

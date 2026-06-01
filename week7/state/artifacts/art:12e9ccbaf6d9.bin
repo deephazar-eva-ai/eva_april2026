@@ -1,0 +1,40 @@
+{
+  "memory_id": "7e9fe26e-17d4-4cff-8c2e-2328d57794be",
+  "source": "corpus/mitigatingdeception-part-2.md",
+  "preview": "[sandbox:corpus/mitigatingdeception-part-2.md chunk 3/4] from expected behaviour. Behaviour-based Intrusion Detection",
+  "text": "from expected behaviour. Behaviour-based Intrusion Detection Systems (IDS) methods were proposed by Pannell and Ashman (2010) and Peng et al. (2016). In these systems, the system administrator monitors the behaviour of users to decide and respond to malicious behaviour. However, unlike our proposed method, these systems often require labelled data, making them susceptible to an aware adversary who knows how to avoid detection. In the context of POMDP, several goal recognition methods have been proposed, for example (Le Guillarme et al. 2016; Ramírez and Geffner 2011). While these methods assume that the observed agent may be malign, they assume that (a) the observer can invert the actions to make inferences about the malign intent, and (b) they use the likelihood of the observed behaviour to recognise this intent. Here, we show how likelihood-based inference is used _against_ the inferring agent, and propose a mechanism that detects deviation from expected behaviour, flagging malevolent agents without making inferences about their goals. Yu et al. (2021) explores how an agent might adapt to higher DoM opponents by learning the best response from experience. However, their mechanism lacks a model to detect when the opponent’s DoM level exceeds the agent’s DoM level, which is a necessary step to prompt the agent to retrain its model. On the other hand, (Piazza et al. 2023) introduces a communicative MARL framework and shows that using ToM to defend against deceptive adversaries has several limitations that are determined by the multi-agent context in which communication is exchanged. For instance, the authors show that deceivers thrive in MARL settings where they can leverage biases such as static play, learning biases, and irrationality. Moreover, their model assumes that the victim can utilise their ToM to make inferences about the intention of the deceiver—distinguishing deceptive behaviour from non-deceptive (up to some limitation described in the paper). In this work we assume that the victim is deceived by an opponent with greater ToM capacity, depriving the victim of the ability to use its ToM to detect deception. ## **1.2 Theory of Mind in Multi-agent RL** In a partially observed single-agent RL problem (POMDP; (Kaelbling et al. 1998)), an agent is uncertain at time _𝑡_ about the exact state of the environment, _𝑠[𝑡]_ ∈ _𝑆_ . It performs an action _𝑎[𝑡]_ ∈ _𝐴_ and receives an observation _𝑜[𝑡]_ ∈ _𝑂_ which depends on both of these: _𝑝_ ( _𝑜[𝑡]_ | _𝑎[𝑡] ,𝑠[𝑡]_ ).",
+  "metadata": {},
+  "score": 0.7239325046539307
+}
+{
+  "memory_id": "b7bb216d-e46f-4514-8c9a-e11f84f4bc62",
+  "source": "corpus/mitigatingdeception-part-2.md",
+  "preview": "[sandbox:corpus/mitigatingdeception-part-2.md chunk 2/4] has been explored by Oey et al. (2023); in their work, howev",
+  "text": "has been explored by Oey et al. (2023); in their work, however, agents are aware of the fact the others may deceive them and hence decide whether the others are lying or not. Nevertheless, humans take action under the belief that others are being deceptive, even in the absence of a fully fledged understanding of why. In our work, we consider the case in which agents cannot reason about the possibility of deceptive behaviour, but they can detect a deviation from _expected_ behaviour. This is somewhat analogous to off-the-equilibrium-path in Perfect Bayesian Equilibrium (PBE) — certain behaviours (policies) should not appear in the interaction. If unexpected behaviour is observed, then it signals to the agent that something in the assumptions about behaviours is wrong. The problem of interacting with unmodeled others was introduced in ad-hoc teamwork (Mirsky et al. 2022; Stone et al. 2010). In a cooperative setting (Hu et al. 2021), an agent needs to learn a policy (behaviour) to interact successfully with other agents. ToM allows successful interaction with others (Weerd et al. 2022). It is, however, assumed that the others are properly modelled by the acting agent. Information-theoretic methods have previously been used for both deception modelling and deception detection. For example, Kopp et al. (2018) introduced a deception modelling framework to study deceptive diffusion along Journal of Artificial Intelligence Research, Vol. 85, Article 14. Publication date: February 2026. 14:4 • Alon, Barnby, Sarkadi, Schulz, Rosenschein & Dayan with cooperation in populations exposed to fake news. Others have looked at detecting masquerading by inferring deception in the context of intrusion detection. For example, Evans et al. (2007) used the MDLCompress algorithm to identify intruders disguised as legitimate users. Maguire et al. (2019) suggests that humans apply a typical set-like mechanism to identify a non-random pattern. However, this is very specific to random behaviour. In this work, we advance this concept to explore several types of deviation away from expected behaviour. Behaviour-based Intrusion Detection Systems (IDS) methods were proposed by Pannell and Ashman (2010) and Peng et al. (2016). In these systems, the system administrator monitors the behaviour of users to decide and respond to malicious behaviour. However, unlike our proposed method, these systems often require labelled data, making them susceptible to an aware adversary who knows how to avoid detection. In the context of POMDP, several goal recognition methods have been proposed, for example (Le Guillarme et",
+  "metadata": {},
+  "score": 0.6929327249526978
+}
+{
+  "memory_id": "be5dd114-c589-481a-b227-3cdc76864c52",
+  "source": "user_query",
+  "preview": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-",
+  "text": "If a scheduling algorithm hits an unexpected delay, how does a ℵ-IPOMDP anomaly-detection mechanism differentiate between a rigid regulatory limit (e.g., Austrian labor caps) and deliberate external deception?",
+  "metadata": {},
+  "score": 0.6776508092880249
+}
+{
+  "memory_id": "d4058318-8bf5-4460-8d99-6fad9da9cd97",
+  "source": "user_query",
+  "preview": "Wireless network protocol vulnerabilities, decentralized multi-agent communicati",
+  "text": "Wireless network protocol vulnerabilities, decentralized multi-agent communication architectures",
+  "metadata": {},
+  "score": 0.6626437902450562
+}
+{
+  "memory_id": "f6d4aa91-4400-4187-93aa-03d4a05838ed",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.6587182283401489
+}

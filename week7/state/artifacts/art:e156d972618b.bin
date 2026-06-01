@@ -1,0 +1,40 @@
+{
+  "memory_id": "abde9210-04fa-4098-892b-c5b32a696e6c",
+  "source": "user_query",
+  "preview": "ow do payload-induced thermal risks in drone BLDC motors compare to the high-vel",
+  "text": "ow do payload-induced thermal risks in drone BLDC motors compare to the high-velocity hoop and radial stresses (σt​,σr​) experienced by carbon/epoxy flywheel rotors? ",
+  "metadata": {},
+  "score": 0.9434149265289307
+}
+{
+  "memory_id": "a976c70d-40f7-432b-8747-abe25592a9d0",
+  "source": "user_query",
+  "preview": "How do payload-induced thermal risks in drone BLDC motors compare to the high-ve",
+  "text": "How do payload-induced thermal risks in drone BLDC motors compare to the high-velocity hoop and radial stresses (σt​,σr​) experienced by carbon/epoxy flywheel rotors? ",
+  "metadata": {},
+  "score": 0.9406269788742065
+}
+{
+  "memory_id": "9f82db4a-92b6-4371-9661-9f38fd9aa8a8",
+  "source": "user_query",
+  "preview": "How do payload-induced thermal risks in drone BLDC motors compare to the high-ve",
+  "text": "How do payload-induced thermal risks in drone BLDC motors compare to the high-velocity hoop and radial stresses (σt​,σr​) experienced by carbon/epoxy flywheel rotors?",
+  "metadata": {},
+  "score": 0.9406269788742065
+}
+{
+  "memory_id": "fdd7ba9b-944b-46fe-9767-2087fab2ce84",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.7592227458953857
+}
+{
+  "memory_id": "b2370a59-fc3b-4211-a30f-d5c7025b18fe",
+  "source": "corpus/Autonomousdrones-part-2.md",
+  "preview": "[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result",
+  "text": "fundamental principles governing electric motors, the resultant mechanical power (P) is evaluated by considering M as the torque which is measured in Newton-meters (Nm), ω as the angular velocity which is expressed in radians per second (rad/s), and n as the rotational speed denoted in revolutions per minute (RPM) [12]. Propellers are coupled on top of these motors that provide lift to the aircraft by spinning and generating airflows which further accelerate mass in one direction, counteracting the force of gravity [13]. An increase in temperature in BLDC motors due to high payload results in anomalies in the motor, making the drone go out of control or crash [14]. Another widespread problem in UAVs is damage to the propellors and motors due to the collection of dust or soil, and impact on crash-landings [15]. To avoid further complications and failure in motors, monitoring their temperatures becomes the first concern [16]. Multiple anomaly detection and temperature sensing systems are developed and implemented in motors to tackle complications caused due to high temperature [17]. In anomaly detection systems, reinforcement learning models are used to continuously detect the **Fig. 1.** Regulations in prominent countries regarding weight (grams) and height (meter). 2",
+  "metadata": {},
+  "score": 0.7592227458953857
+}

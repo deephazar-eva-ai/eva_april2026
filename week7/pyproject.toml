@@ -1,0 +1,14 @@
+[project]
+name = "week6-assgnmt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "crawl4ai>=0.8.6",
+    "ddgs>=9.14.4",
+    "dotenv>=0.9.9",
+    "faiss-cpu>=1.14.2",
+    "httpx>=0.28.1",
+    "mcp>=1.27.1",
+]

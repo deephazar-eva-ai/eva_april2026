@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:1a99f8127dc2",
+  "sha256": "1a99f8127dc204d711850b013dddd70ed319e20f5d98b5e41793b0915e859bf8",
+  "size_bytes": 15142,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 15142 bytes] preview: {   \"memory_id\": \"9149672f-ee3f-4533-802d-5acb94f9a290\",   \"source\": \"corpus/GrapheneSupercapacitors-part-2.md\",   \"preview\": \"[sandbox:corpus/GrapheneSupercapacitors-part-2.md chunk 4/7] assessing the performance of energy storage devices. These m\",   \"te",
+  "created_at": 1780132488.7981062
+}

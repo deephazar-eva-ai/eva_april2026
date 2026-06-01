@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:331e72022c56",
+  "sha256": "331e72022c56effed598e54493820c8df49b7c3a5df93c19578f0f14015030d2",
+  "size_bytes": 10599,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 10599 bytes] preview: {   \"memory_id\": \"589270b9-3483-4672-b3fe-7f316b562375\",   \"source\": \"user_query\",   \"preview\": \"Across the papers I have indexed, what do they say about       chain-of-thought \",   \"text\": \"Across the papers I have indexed, what do they say about       ch",
+  "created_at": 1780065925.2699966
+}

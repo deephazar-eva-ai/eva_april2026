@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:34d393a59ec3",
+  "sha256": "34d393a59ec3bc092b7b66737673f2a6be493a9bb2ae619584dc5a8bcf443e04",
+  "size_bytes": 5106,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 5106 bytes] preview: {   \"path\": \"corpus/Autonomousdrones-part-3.md\",   \"size_bytes\": 4971,   \"content\": \"_Results in Control and Optimization 14 (2024) 100401_ \\n\\n_G.R. Bhat et al._ \\n\\n**Fig. 2.** Autonomous Control Level (ACL) and trends of UAV autonomy [10]. \\n\\ntemperatu",
+  "created_at": 1780078602.8911107
+}

@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:4510765b8f71",
+  "sha256": "4510765b8f71b73aecb09f473de6276fe5af30188367f02d9756bdcd81fc2026",
+  "size_bytes": 17038,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 17038 bytes] preview: {   \"memory_id\": \"55742abc-04b3-4226-809e-8a6d481e8873\",   \"source\": \"corpus/GrapheneSupercapacitors-part-2.md\",   \"preview\": \"[sandbox:corpus/GrapheneSupercapacitors-part-2.md chunk 5/7] distribution, and the effective surface area available for c\",   \"te",
+  "created_at": 1780104300.6575663
+}

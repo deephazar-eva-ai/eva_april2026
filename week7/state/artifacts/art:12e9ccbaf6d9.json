@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:12e9ccbaf6d9",
+  "sha256": "12e9ccbaf6d9c56d0622b9bda6f9b4f5aa55210006d8b211a305fa1020315f82",
+  "size_bytes": 8200,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 8200 bytes] preview: {   \"memory_id\": \"7e9fe26e-17d4-4cff-8c2e-2328d57794be\",   \"source\": \"corpus/mitigatingdeception-part-2.md\",   \"preview\": \"[sandbox:corpus/mitigatingdeception-part-2.md chunk 3/4] from expected behaviour. Behaviour-based Intrusion Detection\",   \"text\": \"fr",
+  "created_at": 1780104100.6470912
+}

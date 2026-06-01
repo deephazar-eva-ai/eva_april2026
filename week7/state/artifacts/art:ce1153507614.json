@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:ce1153507614",
+  "sha256": "ce11535076142695dff94fefd771bb4a27294a01a0774ed6f385393dce5c12d0",
+  "size_bytes": 10836,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 10836 bytes] preview: {   \"path\": \"papers/lora.md\",   \"size_bytes\": 10564,   \"content\": \"[Skip to main content](https://arxiv.org/abs/2106.09685#content)\\n[![Cornell University](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.",
+  "created_at": 1780058149.7525394
+}

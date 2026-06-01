@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:e2a114ad92bd",
+  "sha256": "e2a114ad92bd5d09ae64269c4d504845532d39f4152200e72be4cc507a9eea4f",
+  "size_bytes": 15951,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 15951 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 15680,   \"text\": \"[ ![weather25.com](https://www.weather25.com/images/weather25-black.svg) ](https://www.weather25.com \\\"weather25.com\\\")\\n[United States](https://www.weather25.com/nor",
+  "created_at": 1779455622.7122254
+}

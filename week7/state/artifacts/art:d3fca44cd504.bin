@@ -1,0 +1,40 @@
+{
+  "memory_id": "0b61438c-94f0-4869-a6df-5d91141eac61",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper?",
+  "metadata": {},
+  "score": 0.850327730178833
+}
+{
+  "memory_id": "f8528715-0b17-40b4-8670-d200a832dab3",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.850327730178833
+}
+{
+  "memory_id": "1156b229-9ae2-4919-bbcb-6bf67fd5e69d",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.850327730178833
+}
+{
+  "memory_id": "ca80111b-34a3-4ea2-9077-5f620d45046a",
+  "source": "user_query",
+  "preview": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywh",
+  "text": "What is the maximum specific energy (in W⋅h/kg) of IM9 carbon/epoxy in the flywheel paper? Contrast its kinetic storage mechanism with the electrochemical surface reactions of graphene supercapacitors.",
+  "metadata": {},
+  "score": 0.850327730178833
+}
+{
+  "memory_id": "97d40979-1c1c-4a51-88e5-f723e6974853",
+  "source": "corpus/Designofflywheelenergystoragedevice-part-2.md",
+  "preview": "[sandbox:corpus/Designofflywheelenergystoragedevice-part-2.md chunk 4/5] factor ( _K_ ) of different cross section geometry, for exam",
+  "text": "factor ( _K_ ) of different cross section geometry, for example the _K_ of the constant-stress disc is twice the thin ring. However, the cross-sectional shape of the rotor is complex, and it is not conducive to manufacturing process to mass production, so the section of the rim shape should comprehensively consider specific energy, processing and manufacturing technology and other factors. The calculation formula for the moment of inertia of the hollow cylinder is shown in Eq (2), and the specific energy of the thick rim under different radius ratios can be obtained by entering Eq (1). The relationship between flywheel specific energy and radius ratio at different rim linear velocities are shown in Figure 6. When the radius ratio decreases from 1.0 to 0.6, the flywheel specific energy changes rapidly. For example, when _r_ i/ _r_ o = 0.6, the flywheel specific energy is about 0.68 times that of the thin ring ( _r_ i/ _r_ o = 1.0). Table 1 shows the maximum specific energy of the thin ring flywheel with different materials. **==> picture [308 x 41] intentionally omitted <==** where, _v_ is the linear velocity of the outer diameter of the rim. **==> picture [229 x 166] intentionally omitted <==** **----- Start of picture text -----**<br> Thin ring<br>K = 0.5<br>t<br>Pierced constant thickness disc d r<br>K = 0.305 r i r o<br>t<br>Constant thickness disc<br>K = 0.606<br>Constant-stress disc<br>K = 1.0<br>h<br>**----- End of picture text -----**<br> **Figure 5.** Several flywheel cross-sectional shape factors (thickness = _t_ ) [43,45,46]. Volume 13, Issue 3, 781–797. _AIMS Energy_ 788 **Table 1.** Properties of isotropy materials for flywheel ( _K_ = 0.5) [40,47,48]. |Flywheel material|Density|Tensile stren-gth|Maximum specific|Max peripheral| |---|---|---|---|---| ||(kg/m3)|(Mpa)|energy (W∙h/kg)|velocity(m/s)| |Cast iron|7800|150|2.5|134| |Iron 360|7800|360|2.1|123| |Carbon steel|7850|340|6.0|208| |Aluminum 7075|2800|469|23.3|409| |Titanium Ti-6A1-4V|4430|965|30.3|467| |Steel 4340|7700|1500|27.1|441| |Maraging steel 18Ni-400|8000|2337|28.0|449| |E-glass/epoxy|2150|1679|108.0|884| |AS4 carbon/epoxy|1610|2111|182.0|1145| |IM9 carbon/epoxy|1620|2993|257|1360| Notes: Weights of all flywheels were set to 1 kg, and strengths for metal rims was measured at a thickness of 1 inch. **==> picture [331 x 226] intentionally omitted <==** **----- Start of picture text -----**<br> 600<br>500<br>400<br>300<br>200<br>100<br>0<br>0.0 0.2 0.4 0.6 0.8 1.0<br>r i/ r o<br>200m/s 400m/s 600m/s<br>specific energy /(kJ/kg)<br>**----- End of picture text -----**<br> **Figure 6.** The relation between specific energy vs radius ratio. ## **3. Multistage flywheel energy storage device design** In the mechanical rotating disc model, under the same diameter and rotational speed, the maximum stress of a hollow disc with a certain inner diameter ratio will be about",
+  "metadata": {},
+  "score": 0.7403375506401062
+}

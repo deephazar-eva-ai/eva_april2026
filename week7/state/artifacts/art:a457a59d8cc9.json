@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:a457a59d8cc9",
+  "sha256": "a457a59d8cc90e62b2611b17486be7f4c0b581b88e383c7e8b43dae19c96b606",
+  "size_bytes": 10371,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 10371 bytes] preview: {   \"memory_id\": \"2f16c275-0bc2-4c38-9406-d349064aa923\",   \"source\": \"user_query\",   \"preview\": \"Explain the concept of self-attention.\",   \"text\": \"Explain the concept of self-attention.\",   \"metadata\": {},   \"score\": 0.7712799310684204 } {   \"memory_id\":",
+  "created_at": 1780059511.4391837
+}

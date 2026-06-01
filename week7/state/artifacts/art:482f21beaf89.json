@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:482f21beaf89",
+  "sha256": "482f21beaf89501c6349e44e2999f7aa1e03637f068adfe743b7d9ecc5765e83",
+  "size_bytes": 19464,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 19464 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 19059,   \"text\": \"[Sitemap](https://medium.com/sitemap/sitemap.xml)\\n[Open in app](https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&so",
+  "created_at": 1779440526.7974412
+}

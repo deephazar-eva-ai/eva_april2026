@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:81382a36db75",
+  "sha256": "81382a36db7584289c2d990c230f6791212c44bba1752502a190d6b932676aaf",
+  "size_bytes": 262224,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 262224 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 256129,   \"text\": \"[Jump to content](https://en.wikipedia.org/wiki/Claude_Shannon#bodyContent)\\nMain menu\\nMain menu\\nmove to sidebar hide\\nNavigation \\n  * [Main page](https://en.wiki",
+  "created_at": 1779921184.0166135
+}

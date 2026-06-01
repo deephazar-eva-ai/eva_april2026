@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:3e9db6624704",
+  "sha256": "3e9db66247040fe323a32b04ff2e5f07499cce3a61efa2ee28ae6d5e4a4d8d3a",
+  "size_bytes": 10298,
+  "content_type": "text/plain",
+  "source": "read_file",
+  "descriptor": "[artifact <pending>, 10298 bytes] preview: {   \"path\": \"papers/react.md\",   \"size_bytes\": 10046,   \"content\": \"[Skip to main content](https://arxiv.org/abs/2210.03629#content)\\n[![Cornell University](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www",
+  "created_at": 1780058149.752807
+}

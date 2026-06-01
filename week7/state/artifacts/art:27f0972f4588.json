@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:27f0972f4588",
+  "sha256": "27f0972f458846be3c0425acea0f44ba855d503aec2bd036d79f28c73a331a82",
+  "size_bytes": 5411,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 5411 bytes] preview: {   \"memory_id\": \"2976005f-64b7-43d7-9d58-8eff677109c9\",   \"source\": \"corpus/Autonomousdrones-part-2.md\",   \"preview\": \"[sandbox:corpus/Autonomousdrones-part-2.md chunk 3/3] fundamental principles governing electric motors, the result\",   \"text\": \"fundamen",
+  "created_at": 1780079354.6445394
+}

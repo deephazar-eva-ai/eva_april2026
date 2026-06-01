@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:ea865563ac47",
+  "sha256": "ea865563ac476dbb2a914ce9598cd0bc24969580397110bafbe7b91b5a23ab8e",
+  "size_bytes": 38809,
+  "content_type": "text/plain",
+  "source": "fetch_url",
+  "descriptor": "[artifact <pending>, 38809 bytes] preview: {   \"status\": 200,   \"content_type\": \"text/markdown\",   \"length_bytes\": 38126,   \"text\": \"[ All Cities  ](https://tokyocheapo.com/events/)\\n  * [Japan](https://japancheapo.com/)\\n  * [Hong Kong](https://hongkongcheapo.com/)\\n  * [London](https://londonchea",
+  "created_at": 1779407005.229835
+}

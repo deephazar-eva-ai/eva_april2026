@@ -1,0 +1,9 @@
+{
+  "artifact_id": "art:4f31614a9df8",
+  "sha256": "4f31614a9df8eba1698ec62ffd761750b5ffad9e1f0bee5e5dccd643ff344bda",
+  "size_bytes": 10519,
+  "content_type": "text/plain",
+  "source": "search_knowledge",
+  "descriptor": "[artifact <pending>, 10519 bytes] preview: {   \"memory_id\": \"750b794a-abf6-4bf8-86a5-658acdb96dbb\",   \"source\": \"user_query\",   \"preview\": \"Across these papers, how do they handle the credit assignmentproblem?\",   \"text\": \"Across these papers, how do they handle the credit assignmentproblem?\",   \"m",
+  "created_at": 1780060094.7336006
+}
