@@ -1,0 +1,268 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The memory hits are irrelevant to the current query about Nvidia, Groq, and Cerebras. Fan out three parallel researchers, one per company, then format.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rN",
+                "question": "latest news on Nvidia"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rG",
+                "question": "latest news on Groq"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "latest news on Cerebras"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rN",
+                "n:rG",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rN",
+              "question": "latest news on Nvidia"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rG",
+              "question": "latest news on Groq"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "latest news on Cerebras"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rN",
+              "n:rG",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 15.133790254592896,
+        "provider": "nvidia",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rN",
+        "question": "latest news on Nvidia"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "latest news on Nvidia",
+          "sources": [
+            {
+              "url": "https://www.theguardian.com/technology/2024/nov/20/nvidia-earnings-ai-chipmaker",
+              "title": "Nvidia earnings: AI chip leader shows no signs of stopping mammoth growth"
+            },
+            {
+              "url": "https://nvidianews.nvidia.com/",
+              "title": "Home | NVIDIA Newsroom"
+            }
+          ],
+          "findings": "Nvidia's third-quarter fiscal 2025 results, announced on 20 November 2024, showed revenue of $35.08 billion, a year\u2011over\u2011year increase of about 94% and above analyst expectations. Adjusted earnings per share were 81 cents versus the expected 75 cents. The data\u2011center segment, which supplies AI chips, grew 112% driven by strong demand for generative AI and large\u2011language\u2011model training. Gaming and professional visualization also posted solid gains. After the release, Nvidia's shares fell roughly 5% in extended trading but quickly recovered most of the loss. CEO Jensen Huang noted that demand for the upcoming Blackwell architecture remains robust, while acknowledging ongoing supply\u2011chain constraints. The company forecast fourth\u2011quarter revenue above estimates, underscoring continued momentum in the AI chip market."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 185.0427737236023,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rG",
+        "question": "latest news on Groq"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "latest news on Groq",
+          "sources": [
+            {
+              "url": "https://groq.com/category/news/",
+              "title": "News - Groq"
+            },
+            {
+              "url": "https://groq.com/news_press/",
+              "title": "News and Press - Groq"
+            },
+            {
+              "url": "https://www.datanami.com/vendor/groq/",
+              "title": "Groq - Latest News, Articles & Stories - Datanami"
+            }
+          ],
+          "findings": "Groq, the AI inference hardware and cloud company, has been highly active through late 2025 and into early 2026. In December 2025, Groq and Nvidia entered a non-exclusive inference technology licensing agreement to accelerate AI inference at global scale. Around the same time, Groq partnered with the U.S. Department of Energy to advance AI inference and next-generation computing infrastructure. The company also expanded internationally, launching a data center in Sydney, Australia to serve the Asia-Pacific region, and establishing a European footprint with a data center in Helsinki, Finland.\n\nOn the funding and valuation front, Groq raised $750 million in a funding round announced in September 2025 as inference demand surged. By March 2026, the company reached a reported valuation of $20 billion, having raised approximately $1.39 billion in total disclosed funding. Groq also secured a $1.5 billion commitment from the Kingdom of Saudi Arabia for global GroqCloud deployment.\n\nIn product and partnership news, Groq became the exclusive inference provider for Bell Canada's sovereign AI network in May 2025. The company partnered with McLaren Racing as an Official Partner of the McLaren Formula 1 Team in September 2025. Groq also partnered with Paytm for real-time AI payments in India, with Aljammaz Technologies to power inference across the MENA region, and powers HUMAIN One, a real-time AI operating system for enterprise.\n\nOn the technical side, Groq launched several features on GroqCloud including MCP (Model Context Protocol) Connectors in beta (October 2025), Remote MCP Support in beta (September 2025), prompt caching (August 2025), and day-zero support for OpenAI's open models (August 2025). The company published a deep-dive blog post titled 'Inside the LPU: Deconstructing Groq's Speed' explaining its LPU (Language Processing Unit) architecture. Canopy Labs' Orpheus TTS went live on GroqCloud in February 2026.\n\nGroq was named a Top 10 National Security Tech Company in the U.S. in July 2025 and recognized in the 2025 Gartner Cool Vendor in AI Infrastructure report in November 2025. The company appointed Simon Edwards as Chief Financial Officer in September 2025."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 36.80560660362244,
+        "provider": "nvidia",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "latest news on Cerebras"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "latest news on Cerebras",
+          "sources": [
+            {
+              "url": "https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/",
+              "title": "Cerebras raises $5.5B, then stock pops $108%, in the first huge tech IPO of 2026"
+            },
+            {
+              "url": "https://www.cerebras.ai/press-release/cerebras-systems-announces-closing-of-initial-public-offering",
+              "title": "Cerebras Systems Announces Closing of Initial Public Offering"
+            }
+          ],
+          "findings": "Cerebras Systems, the AI chip maker and Nvidia competitor known for its wafer-scale engine technology, completed its initial public offering in mid-May 2026. The company priced 34.5 million shares of Class A common stock at $185 per share, raising approximately $6.38 billion in gross proceeds. The stock began trading on the Nasdaq Global Select Market on May 14, 2026, under the ticker symbol 'CBRS'. On its first day of trading, shares opened at $385 \u2014 more than double the IPO price, representing a 108% pop \u2014 and closed at $311, giving the company a market valuation of roughly $66 billion. The strong debut made it the first major tech IPO of 2026. CEO and co-founder Andrew Feldman's stake was valued at nearly $1.9 billion at the IPO price, while CTO and co-founder Sean Lie held a stake worth about $1 billion. The IPO road had been rocky: Cerebras first filed to go public in 2024 but faced delays due to CFIUS scrutiny over its ties to Abu Dhabi-based Group 42, which at the time accounted for nearly all of its revenue. The company revived its IPO ambitions after reporting $510 million in revenue for 2025 (up 76% year-over-year) from a diversifying set of customers, alongside a massive sales backlog of $24.6 billion at year-end 2025. On the technology front, Cerebras also recently announced the deployment of Qwen3 235B reasoning models on its hardware, achieving 1,500 tokens per second, and previously claimed a world record for LLM inference speed at over 2,500 tokens per second on a 400B parameter Llama model. The company's flagship WSE-3 processor remains the world's largest commercial AI chip, 58 times larger than a leading GPU."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 53.59758949279785,
+        "provider": "nvidia",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2",
+        "n:3",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "Recent developments for Nvidia, Groq, and Cerebras highlight significant growth and major milestones in the AI hardware sector:\n\n**Nvidia**\nAs of late 2024, Nvidia continues to lead the AI chip market. In its third-quarter fiscal 2025 results, the company reported $35.08 billion in revenue\u2014a 94% year-over-year increase\u2014driven largely by a 112% growth in its data-center segment. Despite supply-chain constraints, CEO Jensen Huang reports robust demand for the upcoming Blackwell architecture, and the company maintains a positive outlook for future revenue.\n\n**Groq**\nGroq has seen rapid expansion through 2025 and early 2026, reaching a $20 billion valuation by March 2026. Key updates include:\n* **Financials:** Raised $750 million in September 2025 and secured a $1.5 billion commitment from Saudi Arabia.\n* **Partnerships:** Entered a non-exclusive inference technology licensing agreement with Nvidia in December 2025 and established sovereign AI partnerships with entities like Bell Canada.\n* **Infrastructure:** Expanded globally with new data centers in Sydney and Helsinki, and continued to enhance its GroqCloud platform with features like prompt caching and MCP connectors.\n\n**Cerebras**\nCerebras achieved a major milestone in May 2026 by completing the first major tech IPO of the year. \n* **Market Debut:** The company raised $6.38 billion, with shares surging 108% on their first day of trading to reach a market valuation of approximately $66 billion.\n* **Financials:** The IPO followed a strong 2025, where the company reported $510 million in revenue and a $24.6 billion sales backlog.\n* **Technology:** Cerebras continues to leverage its wafer-scale engine (WSE-3) technology, recently demonstrating high-speed inference performance with Qwen3 and Llama models."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 2.4526829719543457,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:5"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    }
+  ]
+}

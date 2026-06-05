@@ -1,0 +1,143 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The memory hits do not contain information about Indian tier 2 cities for retirement, so I must use the researcher to gather this information before formatting the response.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [
+                "give me name of few tier 2 cities in india , suitable for retirement"
+              ],
+              "metadata": {
+                "label": "search_cities",
+                "question": "Identify tier 2 cities in India that are considered suitable for retirement."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "n:search_cities"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [
+              "give me name of few tier 2 cities in india , suitable for retirement"
+            ],
+            "metadata": {
+              "label": "search_cities",
+              "question": "Identify tier 2 cities in India that are considered suitable for retirement."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "n:search_cities"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.202142238616943,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [
+        "n:1"
+      ],
+      "metadata": {
+        "label": "search_cities",
+        "question": "Identify tier 2 cities in India that are considered suitable for retirement."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "Identify tier 2 cities in India that are considered suitable for retirement.",
+          "sources": [
+            {
+              "url": "https://www.news18.com/cities/new-delhi-news/metro-fatigue-these-tier-2-3-cities-are-top-retirement-choices-see-full-list-benefits-ws-l-10016935.html",
+              "title": "Metro Fatigue: These Tier 2-3 Cities Are Top Retirement Choices"
+            },
+            {
+              "url": "https://www.providenthousing.com/blog/why-tier-ii-cities-are-the-perfect-retirement-haven/",
+              "title": "Why Tier-II Cities Make the Ideal Retirement Destination"
+            }
+          ],
+          "findings": "Several tier 2 cities in India are increasingly favored for retirement due to their slower pace of life, cleaner environments, and improving infrastructure compared to congested metros. Cities frequently cited as suitable for retirees include Indore, Chandigarh, Dehradun, Mysore, Bhubaneswar, Varanasi, Mangalore, Jaipur, Ahmedabad, and Kochi.\n\nThese locations are gaining popularity as they offer a blend of modern amenities, such as better healthcare and connectivity, while maintaining a more relaxed lifestyle. The growth in interest is supported by significant real estate development and government smart city initiatives, making these cities attractive for those looking to move away from 'metro fatigue'."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 17.76154661178589,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "Several Tier 2 cities in India are becoming popular retirement destinations due to their balance of modern healthcare, improved infrastructure, and a more relaxed pace of life compared to major metros. Based on recent reports, the following cities are highly recommended for retirement:\n\n1. Indore\n2. Chandigarh\n3. Dehradun\n4. Mysore\n5. Bhubaneswar\n6. Varanasi\n7. Mangalore\n8. Jaipur\n9. Ahmedabad\n10. Kochi\n\nThese cities are increasingly favored because they offer essential amenities while helping retirees avoid the congestion and stress often associated with larger metropolitan areas. Sources: [Metro Fatigue: These Tier 2-3 Cities Are Top Retirement Choices](https://www.news18.com/cities/new-delhi-news/metro-fatigue-these-tier-2-3-cities-are-top-retirement-choices-see-full-list-benefits-ws-l-10016935.html) and [Why Tier-II Cities Make the Ideal Retirement Destination](https://www.providenthousing.com/blog/why-tier-ii-cities-are-the-perfect-retirement-haven/)."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.666241407394409,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

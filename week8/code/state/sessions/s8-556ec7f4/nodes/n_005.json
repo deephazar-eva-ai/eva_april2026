@@ -1,0 +1,23 @@
+{
+  "node_id": "n:5",
+  "skill": "researcher",
+  "status": "failed",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": false,
+    "agent_name": "researcher",
+    "output": {},
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 0.0,
+    "provider": "",
+    "error": "exception: RuntimeError: HTTPStatusError: 503 Service Unavailable - simulated transient error"
+  },
+  "prompt_sent": "(exception before prompt-render)",
+  "started_at": 1780461344.947884,
+  "completed_at": 1780461344.9478843,
+  "retries": 0
+}

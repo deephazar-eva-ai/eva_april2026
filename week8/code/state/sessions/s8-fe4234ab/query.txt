@@ -1,0 +1,2 @@
+Find the populations of London, Paris, Berlin and tell me which two are
+closest in size.

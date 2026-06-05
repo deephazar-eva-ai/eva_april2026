@@ -1,0 +1,903 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retrieve information on sodium-ion batteries from memory to generate the requested comparison, ranking, and identification, followed by a critic node to ensure the output meets the strict formatting requirements.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "data",
+                "question": "Compare the energy density of Lithium-Ion, Sodium-Ion, and Solid-State batteries and provide a ranking."
+              }
+            },
+            {
+              "skill": "summariser",
+              "inputs": [
+                "n:data"
+              ],
+              "metadata": {
+                "label": "draft",
+                "question": "Create a comparison table, a ranking from highest to lowest energy density, and identify the highest-energy-density technology."
+              }
+            },
+            {
+              "skill": "critic",
+              "inputs": [
+                "n:draft"
+              ],
+              "metadata": {
+                "label": "check",
+                "question": "Does the output include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:check"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "data",
+              "question": "Compare the energy density of Lithium-Ion, Sodium-Ion, and Solid-State batteries and provide a ranking."
+            }
+          },
+          {
+            "skill": "summariser",
+            "inputs": [
+              "n:data"
+            ],
+            "metadata": {
+              "label": "draft",
+              "question": "Create a comparison table, a ranking from highest to lowest energy density, and identify the highest-energy-density technology."
+            }
+          },
+          {
+            "skill": "critic",
+            "inputs": [
+              "n:draft"
+            ],
+            "metadata": {
+              "label": "check",
+              "question": "Does the output include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:check"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.6300787925720215,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "data",
+        "question": "Compare the energy density of Lithium-Ion, Sodium-Ion, and Solid-State batteries and provide a ranking."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "summariser",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "draft",
+        "question": "Create a comparison table, a ranking from highest to lowest energy density, and identify the highest-energy-density technology."
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "n:3"
+      ],
+      "metadata": {
+        "label": "check",
+        "question": "Does the output include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+      },
+      "status": "pending",
+      "id": "n:4"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:5"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:2 skill=retriever reason=upstream_failure error=exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "recovers": "n:2",
+        "recovery_reason": "upstream_failure"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous attempt failed, so I will retrieve the relevant energy density data from memory and use a critic to ensure the output strictly adheres to the requested table and ranking format.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "data",
+                "question": "Provide energy density data for Lithium-Ion, Sodium-Ion, and Solid-State batteries."
+              }
+            },
+            {
+              "skill": "summariser",
+              "inputs": [
+                "n:data"
+              ],
+              "metadata": {
+                "label": "draft",
+                "question": "Create a comparison table, a ranking of energy density, and identify the highest energy density technology."
+              }
+            },
+            {
+              "skill": "critic",
+              "inputs": [
+                "n:draft"
+              ],
+              "metadata": {
+                "label": "validator",
+                "question": "Ensure the output contains exactly: 1. A comparison table, 2. A ranking from highest to lowest energy density, 3. The name of the highest-energy-density technology."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:validator"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "data",
+              "question": "Provide energy density data for Lithium-Ion, Sodium-Ion, and Solid-State batteries."
+            }
+          },
+          {
+            "skill": "summariser",
+            "inputs": [
+              "n:data"
+            ],
+            "metadata": {
+              "label": "draft",
+              "question": "Create a comparison table, a ranking of energy density, and identify the highest energy density technology."
+            }
+          },
+          {
+            "skill": "critic",
+            "inputs": [
+              "n:draft"
+            ],
+            "metadata": {
+              "label": "validator",
+              "question": "Ensure the output contains exactly: 1. A comparison table, 2. A ranking from highest to lowest energy density, 3. The name of the highest-energy-density technology."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:validator"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.1554808616638184,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:6"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "data",
+        "question": "Provide energy density data for Lithium-Ion, Sodium-Ion, and Solid-State batteries."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)"
+      },
+      "_result_typed": true,
+      "id": "n:7"
+    },
+    {
+      "skill": "summariser",
+      "inputs": [
+        "n:7"
+      ],
+      "metadata": {
+        "label": "draft",
+        "question": "Create a comparison table, a ranking of energy density, and identify the highest energy density technology."
+      },
+      "status": "pending",
+      "id": "n:8"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "n:8"
+      ],
+      "metadata": {
+        "label": "validator",
+        "question": "Ensure the output contains exactly: 1. A comparison table, 2. A ranking from highest to lowest energy density, 3. The name of the highest-energy-density technology."
+      },
+      "status": "pending",
+      "id": "n:9"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:9"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:10"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:7 skill=retriever reason=upstream_failure error=exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "recovers": "n:7",
+        "recovery_reason": "upstream_failure"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Since the previous retriever attempt failed, I will use the summariser to synthesize the existing memory hits regarding sodium-ion batteries and their energy density comparison, then pass the output through a critic to ensure the required table and ranking are present before formatting.",
+          "nodes": [
+            {
+              "skill": "summariser",
+              "inputs": [],
+              "metadata": {
+                "label": "s1",
+                "question": "Synthesize information about sodium-ion batteries and compare their energy density against Lithium-Ion and Solid-State batteries based on available memory hits."
+              }
+            },
+            {
+              "skill": "critic",
+              "inputs": [
+                "n:s1"
+              ],
+              "metadata": {
+                "label": "c1",
+                "question": "Does the response include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:c1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "summariser",
+            "inputs": [],
+            "metadata": {
+              "label": "s1",
+              "question": "Synthesize information about sodium-ion batteries and compare their energy density against Lithium-Ion and Solid-State batteries based on available memory hits."
+            }
+          },
+          {
+            "skill": "critic",
+            "inputs": [
+              "n:s1"
+            ],
+            "metadata": {
+              "label": "c1",
+              "question": "Does the response include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:c1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.2794320583343506,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:11"
+    },
+    {
+      "skill": "summariser",
+      "inputs": [],
+      "metadata": {
+        "label": "s1",
+        "question": "Synthesize information about sodium-ion batteries and compare their energy density against Lithium-Ion and Solid-State batteries based on available memory hits."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "summariser",
+        "output": {
+          "summary": "Sodium-ion batteries serve as a cost-effective, abundant alternative to lithium-ion technology, though they currently offer lower energy density. Lithium-ion batteries remain the industry standard for high-performance applications, while solid-state batteries represent the emerging frontier with the highest potential energy density. In a comparative ranking, solid-state batteries lead the field, followed by lithium-ion, with sodium-ion batteries trailing in energy capacity. Consequently, solid-state technology is identified as the highest-energy-density option among the three.",
+          "preserved_facts": [
+            "Sodium-ion batteries are a cost-effective alternative to lithium-ion.",
+            "Sodium-ion batteries currently have lower energy density than lithium-ion.",
+            "Solid-state batteries offer the highest potential energy density.",
+            "Energy density ranking: Solid-state > Lithium-ion > Sodium-ion.",
+            "Solid-state is the highest-energy-density technology among the three."
+          ]
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.8536136150360107,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:12"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "n:12"
+      ],
+      "metadata": {
+        "label": "c1",
+        "question": "Does the response include a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "Simulated critic failure for exploration"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.291534423828125e-06,
+        "provider": "simulated",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:13"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:13"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:14"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:12 child=n:14 rationale=Simulated critic failure for exploration",
+        "recovers": "n:12",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The knowledge base contains relevant information on sodium-ion batteries and their energy density comparison; I will retrieve this and format it into the requested table and ranking, using a critic to ensure the output meets the specific structural requirements.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "retrieval",
+                "question": "Provide details on sodium-ion batteries and compare energy density with Lithium-Ion and Solid-State batteries."
+              }
+            },
+            {
+              "skill": "summariser",
+              "inputs": [
+                "n:retrieval"
+              ],
+              "metadata": {
+                "label": "summary",
+                "question": "Synthesize the data into a comparison table and energy density ranking."
+              }
+            },
+            {
+              "skill": "critic",
+              "inputs": [
+                "n:summary"
+              ],
+              "metadata": {
+                "label": "validator",
+                "question": "Does the output contain a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:validator"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "retrieval",
+              "question": "Provide details on sodium-ion batteries and compare energy density with Lithium-Ion and Solid-State batteries."
+            }
+          },
+          {
+            "skill": "summariser",
+            "inputs": [
+              "n:retrieval"
+            ],
+            "metadata": {
+              "label": "summary",
+              "question": "Synthesize the data into a comparison table and energy density ranking."
+            }
+          },
+          {
+            "skill": "critic",
+            "inputs": [
+              "n:summary"
+            ],
+            "metadata": {
+              "label": "validator",
+              "question": "Does the output contain a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:validator"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.285933256149292,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:15"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "retrieval",
+        "question": "Provide details on sodium-ion batteries and compare energy density with Lithium-Ion and Solid-State batteries."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)"
+      },
+      "_result_typed": true,
+      "id": "n:16"
+    },
+    {
+      "skill": "summariser",
+      "inputs": [
+        "n:16"
+      ],
+      "metadata": {
+        "label": "summary",
+        "question": "Synthesize the data into a comparison table and energy density ranking."
+      },
+      "status": "pending",
+      "id": "n:17"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "n:17"
+      ],
+      "metadata": {
+        "label": "validator",
+        "question": "Does the output contain a comparison table, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology?"
+      },
+      "status": "pending",
+      "id": "n:18"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:18"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:19"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:16 skill=retriever reason=upstream_failure error=exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "recovers": "n:16",
+        "recovery_reason": "upstream_failure"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The retriever failed previously, so I will use a researcher to fetch fresh information about sodium-ion batteries, followed by a critic to ensure the output meets the specific formatting requirements requested in the memory hits.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "Provide a detailed overview of sodium-ion batteries, including a comparison of energy density against Lithium-Ion and Solid-State batteries."
+              }
+            },
+            {
+              "skill": "critic",
+              "inputs": [
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "c1",
+                "question": "Ensure the output includes: 1. A comparison table of energy densities. 2. A ranking from highest to lowest energy density. 3. The name of the highest-energy-density technology."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:c1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "Provide a detailed overview of sodium-ion batteries, including a comparison of energy density against Lithium-Ion and Solid-State batteries."
+            }
+          },
+          {
+            "skill": "critic",
+            "inputs": [
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "c1",
+              "question": "Ensure the output includes: 1. A comparison table of energy densities. 2. A ranking from highest to lowest energy density. 3. The name of the highest-energy-density technology."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:c1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.4873363971710205,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:20"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "Provide a detailed overview of sodium-ion batteries, including a comparison of energy density against Lithium-Ion and Solid-State batteries."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "Provide a detailed overview of sodium-ion batteries, including a comparison of energy density against Lithium-Ion and Solid-State batteries.",
+          "sources": [
+            {
+              "url": "https://bluecarbon.solar/tech-evolution-of-energy-storage-batteries-lithium-ion-vs-sodium-ion-vs-solid-state/",
+              "title": "Tech Evolution of Energy Storage Batteries: Lithium-ion vs. Sodium-ion vs. Solid-state"
+            }
+          ],
+          "findings": "Sodium-ion batteries are an emerging energy storage technology that leverages the high abundance and low cost of sodium compared to lithium. They are characterized by improved thermal stability and safety, making them particularly attractive for stationary grid-scale storage and cost-sensitive, low-speed electric mobility applications. While currently in the early stages of commercialization, they are seen as a critical alternative to mitigate supply chain risks associated with lithium.\n\nIn terms of performance metrics, sodium-ion batteries generally possess a lower energy density than current lithium-ion technology. Lithium-ion batteries remain the market standard due to their mature manufacturing, high energy density, and long cycle life. Solid-state batteries, which utilize a solid electrolyte instead of a liquid one, represent the frontier of battery research. They are projected to offer the highest energy densities and superior safety profiles, though they currently face significant challenges regarding manufacturing complexity and high costs, limiting them primarily to high-end or specialized applications.\n\n| Battery Technology | Relative Energy Density | Primary Application Focus |\n| :--- | :--- | :--- |\n| Solid-State | Highest | Next-gen EVs, Aerospace |\n| Lithium-Ion | High | Current EVs, Residential Storage |\n| Sodium-Ion | Moderate (Lower) | Grid Storage, Low-speed Mobility |\n\nRanking of energy density (highest to lowest): Solid-State > Lithium-Ion > Sodium-Ion. The technology with the highest energy density is Solid-State."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 12.92763090133667,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:21"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "n:21"
+      ],
+      "metadata": {
+        "label": "c1",
+        "question": "Ensure the output includes: 1. A comparison table of energy densities. 2. A ranking from highest to lowest energy density. 3. The name of the highest-energy-density technology."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "pass",
+          "rationale": "The output includes a comparison table of energy densities, a ranking from highest to lowest energy density, and the name of the highest-energy-density technology, which is Solid-State."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.4532163143157959,
+        "provider": "groq",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:22"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:22"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "The requested information regarding sodium-ion batteries could not be retrieved from the provided inputs. While the critic node confirmed the presence of a comparison table and ranking in the upstream data, the actual content of those findings was not provided in the input stream. Consequently, I cannot display the comparison table, the energy density ranking, or identify the highest-energy-density technology."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 2.3536314964294434,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:3",
+      "target": "n:4"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    },
+    {
+      "source": "n:7",
+      "target": "n:8"
+    },
+    {
+      "source": "n:8",
+      "target": "n:9"
+    },
+    {
+      "source": "n:9",
+      "target": "n:10"
+    },
+    {
+      "source": "n:11",
+      "target": "n:12"
+    },
+    {
+      "source": "n:12",
+      "target": "n:13"
+    },
+    {
+      "source": "n:13",
+      "target": "n:14"
+    },
+    {
+      "source": "n:16",
+      "target": "n:17"
+    },
+    {
+      "source": "n:17",
+      "target": "n:18"
+    },
+    {
+      "source": "n:18",
+      "target": "n:19"
+    },
+    {
+      "source": "n:21",
+      "target": "n:22"
+    },
+    {
+      "source": "n:22",
+      "target": "n:23"
+    }
+  ]
+}

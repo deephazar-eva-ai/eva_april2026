@@ -1,0 +1,225 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The memory hits contain relevant information regarding the energy density comparison of sodium-ion batteries, so I will use a retriever to gather this data and then format the response.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "data",
+                "question": "What are the energy density characteristics of sodium-ion batteries compared to lithium-ion and solid-state batteries?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:data"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "data",
+              "question": "What are the energy density characteristics of sodium-ion batteries compared to lithium-ion and solid-state batteries?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:data"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.239516019821167,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "data",
+        "question": "What are the energy density characteristics of sodium-ion batteries compared to lithium-ion and solid-state batteries?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:2 skill=retriever reason=upstream_failure error=exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "recovers": "n:2",
+        "recovery_reason": "upstream_failure"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Since the retriever failed previously and the memory hits do not contain specific information about sodium-ion batteries, I will use the researcher to fetch fresh information and then format the response.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "What are sodium-ion batteries, how do they work, and what are their pros and cons?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "What are sodium-ion batteries, how do they work, and what are their pros and cons?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.1132383346557617,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "What are sodium-ion batteries, how do they work, and what are their pros and cons?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: RuntimeError: HTTPStatusError: 503 Service Unavailable - simulated transient error"
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:5",
+      "target": "n:6"
+    }
+  ]
+}

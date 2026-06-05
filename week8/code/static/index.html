@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Orchestrator</title>
+    <meta name="description" content="A powerful multi-agent workflow system built with modern AI.">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Highlight.js for code formatting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <h1 class="logo"><span class="accent">Agent</span>Orchestrator</h1>
+            <p class="subtitle">Session 8 DAG execution engine</p>
+        </header>
+
+        <section class="input-section glass-panel">
+            <form id="queryForm" class="query-form">
+                <div class="input-group">
+                    <input type="text" id="queryInput" placeholder="Enter a task for the agent network..." autocomplete="off" required>
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">Execute</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <div class="layout-grid">
+            <section class="execution-panel glass-panel">
+                <div class="panel-header">
+                    <h2>Execution Graph</h2>
+                    <span class="status-badge" id="executionStatus">Idle</span>
+                </div>
+                <div class="node-tracker" id="nodeTracker">
+                    <!-- Nodes will be injected here dynamically -->
+                    <div class="empty-state">Waiting for query...</div>
+                </div>
+                <div class="terminal-logs" id="terminalLogs">
+                    <!-- Raw logs go here -->
+                </div>
+            </section>
+
+            <section class="result-panel glass-panel">
+                <div class="panel-header">
+                    <h2>Final Output</h2>
+                </div>
+                <div class="result-content" id="resultContent">
+                    <div class="empty-state">Results will appear here when execution completes.</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

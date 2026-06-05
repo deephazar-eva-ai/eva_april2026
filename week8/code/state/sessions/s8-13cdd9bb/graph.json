@@ -1,0 +1,115 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The user is asking about sodium-ion batteries, and while there is a memory hit regarding energy density comparisons, it is insufficient to provide a comprehensive overview of sodium-ion technology as requested; therefore, I will use the researcher to gather the necessary information.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "Provide an overview of sodium-ion batteries, including their working principle, advantages, disadvantages, and current state of development."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "Provide an overview of sodium-ion batteries, including their working principle, advantages, disadvantages, and current state of development."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.579625606536865,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "Provide an overview of sodium-ion batteries, including their working principle, advantages, disadvantages, and current state of development."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: RuntimeError: validation error: malformed NodeSpec simulated"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

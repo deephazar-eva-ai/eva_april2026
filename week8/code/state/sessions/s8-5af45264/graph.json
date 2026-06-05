@@ -1,0 +1,132 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Translate the provided phrase into Spanish using the translator skill.",
+          "nodes": [
+            {
+              "skill": "translator",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "t1",
+                "question": "Translate 'Hello world, the weather is beautiful today' to Spanish."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:t1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "translator",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "t1",
+              "question": "Translate 'Hello world, the weather is beautiful today' to Spanish."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:t1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.8997433185577393,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "translator",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "t1",
+        "question": "Translate 'Hello world, the weather is beautiful today' to Spanish."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "translator",
+        "output": {
+          "translated_text": "Hola mundo, el clima est\u00e1 hermoso hoy",
+          "target_language": "Spanish"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 180.9351851940155,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "The Spanish translation for 'Hello world, the weather is beautiful today' is: 'Hola mundo, el clima est\u00e1 hermoso hoy'."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.989274740219116,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

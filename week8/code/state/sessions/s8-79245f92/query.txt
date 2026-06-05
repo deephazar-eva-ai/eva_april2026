@@ -1,0 +1,1 @@
+What is the 50th Fibonacci number? Use the coder skill to calculate it and ensure you get the exact result.Calculate the exact value of the 10,000th prime number.what is the square root of 10,000th prime number.Add the result of all three queries, Use the coder skill to calculate it and ensure you get the exact result.

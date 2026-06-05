@@ -1,0 +1,11 @@
+{
+  "node_id": "n:28",
+  "skill": "retriever",
+  "status": "running",
+  "inputs": [],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1780549477.7521899,
+  "completed_at": null,
+  "retries": 0
+}

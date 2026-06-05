@@ -1,0 +1,12 @@
+Compare Lithium-Ion, Sodium-Ion and Solid-State batteries.
+
+For each technology:
+1. Energy density
+2. Charging speed
+3. Safety characteristics
+4. Commercial maturity
+
+Then generate:
+- a comparison table,
+- a ranking by EV suitability,
+- and a final recommendation.

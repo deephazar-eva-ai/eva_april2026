@@ -1,0 +1,138 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The memory hits are irrelevant to the query about Mysore; therefore, I will use the researcher to find residential areas in Mysore suitable for non-Kannada speakers and then format the response.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "Which localities in Mysore are considered expat-friendly or suitable for non-Kannada speakers to reside in?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "Which localities in Mysore are considered expat-friendly or suitable for non-Kannada speakers to reside in?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.240153074264526,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "Which localities in Mysore are considered expat-friendly or suitable for non-Kannada speakers to reside in?"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "Which localities in Mysore are considered expat-friendly or suitable for non-Kannada speakers to reside in?",
+          "sources": [
+            {
+              "url": "https://www.rentomojo.com/blog/residential-areas-in-mysore/",
+              "title": "Top 6 Residential Areas In Mysore: Know Where To Live In 2026 | RentoMojo"
+            }
+          ],
+          "findings": "Mysore is a welcoming city with several residential areas suitable for those who may not speak Kannada. Gokulam is frequently cited as a preferred location for international visitors and expats, largely due to its popularity as a hub for yoga centers, which fosters a cosmopolitan and diverse environment. Its peaceful atmosphere and proximity to central landmarks like the Mysore Palace make it a convenient and culturally engaging choice.\n\nOther established, well-planned residential areas such as Vijayanagar, Kuvempunagar, and Saraswathipuram are also highly regarded. These areas are characterized by robust infrastructure, good connectivity, and proximity to essential services like reputed educational institutions, hospitals, and shopping centers. While these neighborhoods are more integrated into the local urban fabric, their status as prime residential hubs makes them accessible and comfortable for newcomers to the city."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 12.982309579849243,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "For a non-Kannada speaker moving to Mysore, Gokulam is the most highly recommended locality. It is a popular hub for yoga centers, which has created a cosmopolitan and diverse environment that is particularly welcoming to international visitors and expats. \n\nAdditionally, the following well-planned residential areas are also excellent choices due to their robust infrastructure, good connectivity, and access to essential services like hospitals, schools, and shopping centers:\n\n1. Vijayanagar\n2. Kuvempunagar\n3. Saraswathipuram\n\nThese areas are well-integrated into the city, making them comfortable and accessible for newcomers. Source: https://www.rentomojo.com/blog/residential-areas-in-mysore/"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.365421772003174,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The user wants a translation of a specific phrase into Hindi, which requires using the translator skill.",
+          "nodes": [
+            {
+              "skill": "translator",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "t1",
+                "question": "Translate the phrase 'Hello world, the weather is beautiful today' into Hindi."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:t1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "translator",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "t1",
+              "question": "Translate the phrase 'Hello world, the weather is beautiful today' into Hindi."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:t1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.5857155323028564,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "translator",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "t1",
+        "question": "Translate the phrase 'Hello world, the weather is beautiful today' into Hindi."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "translator",
+        "output": {
+          "translated_text": "\u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e, \u0906\u091c \u092e\u094c\u0938\u092e \u092c\u0939\u0941\u0924 \u0938\u0941\u0939\u093e\u0935\u0928\u093e \u0939\u0948",
+          "target_language": "Hindi"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 13.533761501312256,
+        "provider": "nvidia",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "The translation of 'Hello world, the weather is beautiful today' into Hindi is: \u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e, \u0906\u091c \u092e\u094c\u0938\u092e \u092c\u0939\u0941\u0924 \u0938\u0941\u0939\u093e\u0935\u0928\u093e \u0939\u0948"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.0088798999786377,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

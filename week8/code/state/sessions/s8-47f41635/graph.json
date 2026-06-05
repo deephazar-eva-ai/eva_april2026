@@ -1,0 +1,132 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Translate the requested phrase into Assamese using the translator skill.",
+          "nodes": [
+            {
+              "skill": "translator",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "t1",
+                "question": "Translate 'Hello world, the weather is beautiful today' into Assamese"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:t1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "translator",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "t1",
+              "question": "Translate 'Hello world, the weather is beautiful today' into Assamese"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:t1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.870567560195923,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "translator",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "t1",
+        "question": "Translate 'Hello world, the weather is beautiful today' into Assamese"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "translator",
+        "output": {
+          "translated_text": "\u09a8\u09ae\u09b8\u09cd\u0995\u09be\u09f0 \u09ac\u09bf\u09b6\u09cd\u09ac, \u0986\u099c\u09bf \u09ac\u09a4\u09f0\u099f\u09cb \u09ac\u09f0 \u09a7\u09c1\u09a8\u09c0\u09af\u09bc\u09be\u0964",
+          "target_language": "Assamese"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 181.30633640289307,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "The translation of 'Hello world, the weather is beautiful today' into Assamese is: \u09a8\u09ae\u09b8\u09cd\u0995\u09be\u09f0 \u09ac\u09bf\u09b6\u09cd\u09ac, \u0986\u099c\u09bf \u09ac\u09a4\u09f0\u099f\u09cb \u09ac\u09f0 \u09a7\u09c1\u09a8\u09c0\u09af\u09bc\u09be\u0964"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.93634295463562,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

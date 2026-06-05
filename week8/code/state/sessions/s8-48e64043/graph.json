@@ -1,0 +1,103 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Translate the provided phrase into Spanish using the translator skill.",
+          "nodes": [
+            {
+              "skill": "translator",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "t1",
+                "question": "Translate 'Hello world, the weather is beautiful today!' to Spanish."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:t1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "translator",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "t1",
+              "question": "Translate 'Hello world, the weather is beautiful today!' to Spanish."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:t1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 3.9243593215942383,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "translator",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "t1",
+        "question": "Translate 'Hello world, the weather is beautiful today!' to Spanish."
+      },
+      "status": "running",
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

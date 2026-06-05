@@ -1,0 +1,23 @@
+{
+  "node_id": "n:2",
+  "skill": "researcher",
+  "status": "failed",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": false,
+    "agent_name": "researcher",
+    "output": {},
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 0.0,
+    "provider": "",
+    "error": "exception: RuntimeError: validation error: malformed NodeSpec simulated"
+  },
+  "prompt_sent": "(exception before prompt-render)",
+  "started_at": 1780461353.4731436,
+  "completed_at": 1780461353.4731448,
+  "retries": 0
+}

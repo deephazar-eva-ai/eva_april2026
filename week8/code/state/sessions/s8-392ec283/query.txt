@@ -1,0 +1,6 @@
+Compare the energy density of Lithium-Ion, Sodium-Ion, and Solid-State batteries. SIMULATE_FAIL
+
+Produce:
+1. A comparison table.
+2. A ranking from highest to lowest energy density.
+3. The name of the highest-energy-density technology.

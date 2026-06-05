@@ -1,0 +1,136 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The user wants information about Claude Shannon from a specific URL; I will use the researcher to fetch the content and then format the answer.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "fetch_shannon",
+                "question": "Fetch birth date, death date, and three key contributions to information theory from https://en.wikipedia.org/wiki/Claude_Shannon"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:fetch_shannon"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "fetch_shannon",
+              "question": "Fetch birth date, death date, and three key contributions to information theory from https://en.wikipedia.org/wiki/Claude_Shannon"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:fetch_shannon"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.140841245651245,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "fetch_shannon",
+        "question": "Fetch birth date, death date, and three key contributions to information theory from https://en.wikipedia.org/wiki/Claude_Shannon"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "Fetch birth date, death date, and three key contributions to information theory from https://en.wikipedia.org/wiki/Claude_Shannon",
+          "sources": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Claude_Shannon",
+              "title": "Claude Shannon - Wikipedia"
+            }
+          ],
+          "findings": "Claude Shannon was born on April 30, 1916, and passed away on February 24, 2001.\n\nHis foundational contributions to information theory include: 1) The introduction of the 'bit' as the fundamental unit of information, 2) The establishment of the channel capacity theorem, which defines the maximum rate at which information can be reliably transmitted over a noisy communication channel, and 3) The formalization of entropy as a measure of the uncertainty or information content in a data source, which revolutionized the understanding of data compression and communication efficiency."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 16.619242668151855,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "Claude Shannon was born on April 30, 1916, and died on February 24, 2001. His three key contributions to information theory are:\n\n1. The introduction of the 'bit' as the fundamental unit of information.\n2. The establishment of the channel capacity theorem, which defines the maximum rate for reliable information transmission over a noisy channel.\n3. The formalization of entropy as a measure of uncertainty or information content, which revolutionized data compression and communication efficiency.\n\nSource: https://en.wikipedia.org/wiki/Claude_Shannon"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.5165510177612305,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

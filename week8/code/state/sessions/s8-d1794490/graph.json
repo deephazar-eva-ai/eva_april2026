@@ -1,0 +1,272 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch energy density data for each battery type in parallel to ensure accurate comparison, then synthesize the results.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "li",
+                "question": "What is the typical energy density of Lithium-Ion batteries in Wh/kg?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "na",
+                "question": "What is the typical energy density of Sodium-Ion batteries in Wh/kg?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "ss",
+                "question": "What is the typical energy density of Solid-State batteries in Wh/kg?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:li",
+                "n:na",
+                "n:ss"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "li",
+              "question": "What is the typical energy density of Lithium-Ion batteries in Wh/kg?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "na",
+              "question": "What is the typical energy density of Sodium-Ion batteries in Wh/kg?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "ss",
+              "question": "What is the typical energy density of Solid-State batteries in Wh/kg?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:li",
+              "n:na",
+              "n:ss"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.359801530838013,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "li",
+        "question": "What is the typical energy density of Lithium-Ion batteries in Wh/kg?"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "What is the typical energy density of Lithium-Ion batteries in Wh/kg?",
+          "sources": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Lithium-ion_battery",
+              "title": "Lithium-ion battery - Wikipedia"
+            },
+            {
+              "url": "https://www.ufinebattery.com/blog/what-is-the-energy-density-of-a-lithium-ion-battery/",
+              "title": "Lithium-Ion Battery Energy Density: Wh/kg, Wh/L & EVs"
+            },
+            {
+              "url": "https://www.szaspower.com/industry-news/lithium-ion-battery-energy-density-guide.html",
+              "title": "Lithium-Ion Battery Energy Density Guide for OEM Devices (2026)"
+            }
+          ],
+          "findings": "The typical energy density of commercial lithium-ion batteries generally ranges between 100 and 265 Wh/kg. Most industry sources commonly cite a narrower, standard range of approximately 150 to 250 Wh/kg for typical applications.\n\nEnergy density is heavily dependent on the specific battery chemistry, design, and intended application. While standard commercial cells often perform in the 200\u2013260 Wh/kg range, advanced developments and specific high-energy chemistries can push these values higher, with some reports noting densities approaching 350 Wh/kg in specialized or newer implementations.\n\nIt is important to distinguish between cell-level energy density and pack-level energy density, as the inclusion of battery management systems, cooling, and structural casing typically reduces the effective energy density of a complete battery pack compared to an individual cell."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 29.029767751693726,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "na",
+        "question": "What is the typical energy density of Sodium-Ion batteries in Wh/kg?"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "What is the typical energy density of Sodium-Ion batteries in Wh/kg?",
+          "sources": [
+            {
+              "url": "https://blog.skyrc.com/the-rise-of-cylindrical-sodium-ion-battery/",
+              "title": "The Rise of Cylindrical Sodium-Ion Battery \u2013 SkyRC Blog"
+            },
+            {
+              "url": "https://nauticalvoice.com/sodium-based-batteries-for-marine-propulsion-systems-a-new-wave-in-maritime-energy/50953/",
+              "title": "Sodium-Based Batteries for Marine Propulsion Systems: A New"
+            },
+            {
+              "url": "https://www.ufinebattery.com/blog/can-sodium-ion-batteries-replace-lithium-ion-batteries/",
+              "title": "Sodium-ion vs Lithium-ion: Can Sodium Batteries Be Future?"
+            }
+          ],
+          "findings": "The typical gravimetric energy density for sodium-ion batteries generally ranges from 100 to 160 Wh/kg. Some sources cite a slightly narrower range of 100 to 150 Wh/kg.\n\nWhile this energy density is generally lower than that of mainstream lithium-ion batteries (which often range from 150 to 250 Wh/kg), sodium-ion technology is considered a promising, cost-effective, and more sustainable alternative for various applications, including grid storage and certain electric vehicle uses."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 32.8009307384491,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "ss",
+        "question": "What is the typical energy density of Solid-State batteries in Wh/kg?"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "What is the typical energy density of Solid-State batteries in Wh/kg?",
+          "sources": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Solid-state_battery",
+              "title": "Solid-state battery - Wikipedia"
+            },
+            {
+              "url": "https://www.electrive.com/2025/12/17/welion-achieves-824-wh-kg-energy-density-in-lab-for-solid-state-battery/",
+              "title": "WeLion achieves 824 Wh/kg energy density in lab for solid-state battery - electrive.com"
+            }
+          ],
+          "findings": "Solid-state batteries generally offer higher energy densities compared to traditional lithium-ion batteries, which typically have densities below 300 Wh/kg. Current solid-state battery technology is capable of exceeding 350 Wh/kg at the cell level.\n\nMost ongoing development and commercial targets for solid-state batteries currently range from 350 to 500 Wh/kg. While experimental results and laboratory achievements can reach significantly higher figures\u2014with some reports citing values above 800 Wh/kg\u2014these are not yet representative of typical, standardized, or widely available commercial energy densities."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 36.61908292770386,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2",
+        "n:3",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "### 1. Comparison Table\n\n| Battery Technology | Typical Energy Density (Wh/kg) |\n| :--- | :--- |\n| Sodium-Ion | 100 \u2013 160 Wh/kg |\n| Lithium-Ion | 150 \u2013 250 Wh/kg |\n| Solid-State | 350 \u2013 500 Wh/kg |\n\n### 2. Ranking (Highest to Lowest Energy Density)\n1. **Solid-State Batteries** (350 \u2013 500+ Wh/kg)\n2. **Lithium-Ion Batteries** (150 \u2013 250 Wh/kg)\n3. **Sodium-Ion Batteries** (100 \u2013 160 Wh/kg)\n\n### 3. Highest Energy Density Technology\nThe technology with the highest energy density is the **Solid-State battery**.\n\n*Sources: Wikipedia (Lithium-ion, Solid-state), Ufine Battery, SkyRC, Nautical Voice, and Electrive.*"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.716890811920166,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:5"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "node_id": "n:10",
+  "skill": "sandbox_executor",
+  "status": "complete",
+  "inputs": [
+    "n:7"
+  ],
+  "result": {
+    "success": true,
+    "agent_name": "sandbox_executor",
+    "output": {
+      "exit_code": 0,
+      "stdout": "Two souls linked as one\nSpooky action at distance\nBound in space and time\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "files_written": [],
+      "timed_out": false,
+      "cwd": "/tmp/s8sandbox-upy8slcp"
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 0.016022920608520508,
+    "provider": "",
+    "error": null
+  },
+  "prompt_sent": "You are the SandboxExecutor skill. You exist to receive Python code\nemitted by an upstream Coder node and run it in a subprocess sandbox.\n\nThis skill almost never sees the LLM: the orchestrator calls\n`sandbox.run_python(code)` directly and packages the result into the\nAgentResult. This file is here so the catalogue listing is complete and\nso a future iteration can extend the skill with LLM-level post-checks.\n\nWhen invoked through the LLM path (only used for post-mortem\nexplanations), you receive `result` in INPUTS — the stdout / stderr /\nexit-code dict the sandbox returned. Your job is to describe what\nhappened:\n\n  {\n    \"summary\": \"<one line — exit code, whether it timed out, what was printed>\"\n  }\n\nYou make no other tool calls. You do not re-execute the code.\n\nMEMORY HITS (8 from FAISS):\n  - [tool_outcome] Fetch Claude Shannon's birth date, death date, and three information theory contributions from wikipedia.org\n      source: user_query\n      raw: Fetch https://en.wikipedia.org/wiki/Claude_Shannon and tell me his birth date, death date, and three key contributions to information theory.\n  - [tool_outcome] Information about Claude Shannon, birth date, death date, and information theory contributions\n      source: user_query\n      raw: Fetch https://en.wikipedia.org/wiki/Claude_Shannon and tell me his birth date, death date, and three key contributions to information theory.\n  - [tool_outcome] Information about Claude Shannon, including birth and death dates and contributions to information theory\n      source: user_query\n      raw: Fetch https://en.wikipedia.org/wiki/Claude_Shannon and tell me his birth date, death date, and three key contributions to information theory.\n  - [fact] Claude Shannon birth and death dates and three contributions to information theory\n      source: user_query\n      raw: When was Claude Shannon born and when did he die? Name three of his contributions to information theory.\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Translate 'Hello world, the weather is beautiful today' into Spanish\n      source: user_query\n      raw: Please translate this phrase to Spanish using the translator skill: 'Hello world, the weather is beautiful today'\n\nINPUTS:\n[\n  {\n    \"id\": \"n:7\",\n    \"kind\": \"upstream\",\n    \"skill\": \"coder\",\n    \"output\": {\n      \"code\": \"haiku = \\\"Two souls linked as one\\\\nSpooky action at distance\\\\nBound in space and time\\\"\\nprint(haiku)\",\n      \"rationale\": \"Prints a haiku about quantum entanglement with a 4-6-4 syllable structure (Two-souls-linked-as-one [4], Spoo-ky-ac-tion-at-dis-tance [6], Bound-in-space-and-time [4]).\"\n    }\n  }\n]",
+  "started_at": 1780566095.1442919,
+  "completed_at": 1780566095.160315,
+  "retries": 0
+}

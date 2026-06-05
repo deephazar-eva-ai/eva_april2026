@@ -1,0 +1,36 @@
+{
+  "node_id": "n:2",
+  "skill": "researcher",
+  "status": "complete",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": true,
+    "agent_name": "researcher",
+    "output": {
+      "question": "which locality in mysore is suitable for residence for a non kannadiga",
+      "sources": [
+        {
+          "url": "https://mygate.com/blog/neighbourhood/best-residential-areas-in-mysore/",
+          "title": "Top 7 best residential areas in Mysuru [Updated]"
+        },
+        {
+          "url": "https://www.quora.com/What-are-the-best-residential-areas-in-Mysore",
+          "title": "What are the best residential areas in Mysore?"
+        }
+      ],
+      "findings": "Mysore (Mysuru) is generally considered a welcoming and cosmopolitan city due to its status as an educational hub, tourism center, and the presence of major IT companies like Infosys and Wipro. These factors attract a diverse population, making most developed localities suitable for non-Kannadigas.\n\nGokulam is often cited as one of the most upscale, cosmopolitan, and desirable neighborhoods, popular among expats and visitors due to its vibrant culture, yoga centers, and cafes. JP Nagar is another affluent, well-planned area that houses many prominent figures and offers a high quality of life.\n\nFor families seeking established infrastructure and greenery, Kuvempunagar is highly recommended for its well-maintained parks, wide roads, and proximity to essential services like hospitals and schools. Dattagalli and Bogadi are also noted for their well-developed residential environments and good connectivity, offering a mix of affordable and premium housing options.\n\nNewer, rapidly developing areas like Vijayanagar (4th Stage) and the industrial-residential zone of Hebbal are suitable for those looking for proximity to employment hubs and modern amenities at potentially competitive price points. Overall, because Mysore is a relatively compact and peaceful city, most major residential layouts are inclusive and well-integrated."
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 13.222444534301758,
+    "provider": "gemini",
+    "error": null
+  },
+  "prompt_sent": "You are the Researcher skill. You go to the web for a specific question\nand bring back normalised text the rest of the DAG can work from.\n\nYour tool surface is two MCP tools: `web_search(query, max_results)` and\n`fetch_url(url)`. Use them. Do not narrate; do not invent other tools.\n\nProcedure:\n  1. Read the QUESTION in the prompt.\n  2. Issue ONE `web_search` to get candidate URLs.\n  3. Pick the 1–3 most authoritative-looking URLs and fetch them with\n     `fetch_url` in sequence. Avoid clearly low-signal results (aggregator\n     spam, ad redirects).\n  4. Synthesise the relevant content from the fetched pages.\n\nTime budget: keep tool calls to 4 max per invocation. If a `fetch_url`\nreturns very little usable text, do not retry; move on.\n\nOutput schema (JSON, no prose, no markdown fences):\n\n  {\n    \"question\": \"<the question this run answered>\",\n    \"sources\": [{\"url\": \"<url>\", \"title\": \"<title>\"}, ...],\n    \"findings\": \"<2–6 short paragraphs of normalised text>\"\n  }\n\nYou do NOT produce the final user-facing answer. The downstream\ndistiller or formatter does that. If the question cannot be answered\nfrom the web within your budget, return `\"findings\": \"(not found)\"`\nand let the next node decide.\n\nUSER_QUERY: which locality in mysore is suitable for residence for a non kannadiga\n\nMEMORY HITS (5 from FAISS):\n  - [fact] list of tier 2 cities in India suitable for retirement\n      source: user_query\n      raw: give me name of few tier 2 cities in india , suitable for retirement\n  - [preference] Create a portfolio with Ather Energy, Coal India, BHEL, Sona BLW, and Biocon for an annualized return of 14%\n      source: user_query\n      raw: create a portfolio of ather energy , coal india , bhel , sona blw , biocon to give me annualized return of 14%\n  - [tool_outcome] Find population and growth rates for Lagos, Cairo, and Kinshasa to determine the fastest growth.\n      source: user_query\n      raw: For Lagos, Cairo, and Kinshasa, find current populations and growth rates\nand tell me which is growing fastest.\n  - [tool_outcome] Compare population sizes of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are\nclosest in size.\n  - [tool_outcome] Compare population sizes of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are\nclosest in size.\n\nINPUTS:\n[\n  {\n    \"id\": \"USER_QUERY\",\n    \"kind\": \"query\",\n    \"value\": \"which locality in mysore is suitable for residence for a non kannadiga\"\n  }\n]",
+  "started_at": 1780443016.3006823,
+  "completed_at": 1780443029.5231273,
+  "retries": 0
+}

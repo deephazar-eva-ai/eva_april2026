@@ -1,0 +1,220 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Calculate the 50th Fibonacci number using Python code to ensure precision.",
+          "nodes": [
+            {
+              "skill": "coder",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "calc",
+                "question": "Write and execute Python code to calculate the 50th Fibonacci number."
+              }
+            },
+            {
+              "skill": "sandbox_executor",
+              "inputs": [
+                "n:calc"
+              ],
+              "metadata": {
+                "label": "exec"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:exec"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "coder",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "calc",
+              "question": "Write and execute Python code to calculate the 50th Fibonacci number."
+            }
+          },
+          {
+            "skill": "sandbox_executor",
+            "inputs": [
+              "n:calc"
+            ],
+            "metadata": {
+              "label": "exec"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:exec"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 4.265183448791504,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "coder",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "calc",
+        "question": "Write and execute Python code to calculate the 50th Fibonacci number."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "coder",
+        "output": {
+          "code": "def fibonacci(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nprint(fibonacci(50))",
+          "rationale": "Calculates the 50th Fibonacci number using an iterative approach to ensure precision."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.7626547813415527,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "sandbox_executor",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "exec"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "sandbox_executor",
+        "output": {
+          "exit_code": 0,
+          "stdout": "12586269025\n",
+          "stdout_truncated": false,
+          "stderr": "",
+          "stderr_truncated": false,
+          "files_written": [],
+          "timed_out": false,
+          "cwd": "/tmp/s8sandbox-f3w55spk"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.014256000518798828,
+        "provider": "",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:3"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "The 50th Fibonacci number is 12,586,269,025."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.8283002376556396,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "sandbox_executor",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "sandbox_executor",
+        "output": {
+          "exit_code": 0,
+          "stdout": "12586269025\n",
+          "stdout_truncated": false,
+          "stderr": "",
+          "stderr_truncated": false,
+          "files_written": [],
+          "timed_out": false,
+          "cwd": "/tmp/s8sandbox-veh1vaop"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.010106563568115234,
+        "provider": "",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:4"
+    }
+  ]
+}

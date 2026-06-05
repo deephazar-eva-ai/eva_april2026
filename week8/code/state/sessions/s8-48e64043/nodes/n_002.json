@@ -1,0 +1,13 @@
+{
+  "node_id": "n:2",
+  "skill": "translator",
+  "status": "running",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1780464677.8513987,
+  "completed_at": null,
+  "retries": 0
+}

@@ -1,0 +1,1 @@
+Calculate the exact value of the 10,000th prime number. The planner MUST emit a coder, a sandbox_executor depending on the coder, and a formatter depending on the sandbox_executor.

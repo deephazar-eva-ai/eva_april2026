@@ -1,0 +1,2909 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch each city's population in parallel, then compare.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.2185282707214355,
+        "provider": "groq",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 14.443351745605469,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.3355298042297363,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 137.6383512020111,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2",
+        "n:3",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:5"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:2 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:2",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous attempt failed due to a transient server error; re-executing the parallel research tasks to fetch population data for London, Paris, and Berlin.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "What is the current population of London?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "What is the current population of Paris?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "What is the current population of Berlin?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "What is the current population of London?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "What is the current population of Paris?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "What is the current population of Berlin?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.6396760940551758,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:6"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:3 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:3",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch each city's population in parallel, then compare.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 0.8851523399353027,
+        "provider": "groq",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:7"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "What is the current population of London?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.3828339576721191,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:8"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "What is the current population of Paris?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.1971547603607178,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:9"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "What is the current population of Berlin?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.172968864440918,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:10"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:8",
+        "n:9",
+        "n:10"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:11"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "current population of London",
+          "sources": [
+            {
+              "url": "https://en.wikipedia.org/wiki/London",
+              "title": "London - Wikipedia"
+            },
+            {
+              "url": "https://worldpopulationreview.com/cities/united-kingdom/london",
+              "title": "London Population 2026"
+            },
+            {
+              "url": "https://www.macrotrends.net/global-metrics/cities/22860/london/population",
+              "title": "London, UK Metro Area Population (1950-2026) | MacroTrends"
+            }
+          ],
+          "findings": "According to Wikipedia, London had a population of 9.1 million people in 2024, making it the capital and largest city of England and the United Kingdom.\n\nWorld Population Review estimates London's 2026 population at 9,188,200, based on UK local authority data and internal projections, reflecting a 0.54% annual growth from the previous year.\n\nFor the broader metropolitan area, MacroTrends reports the current metro area population of London in 2026 is 9,927,000, representing a 0.87% increase from 2025."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 45.09174370765686,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:12"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.565497875213623,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:13"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.1822915077209473,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:14"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:12",
+        "n:13",
+        "n:14"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:15"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:8 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:8",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.4849967956542969,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:16"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:9 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:9",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous attempt failed due to a transient error; re-fetching population data for London, Paris, and Berlin in parallel to perform the comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "What is the current population of London?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "What is the current population of Paris?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "What is the current population of Berlin?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "What is the current population of London?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "What is the current population of Paris?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "What is the current population of Berlin?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.5089647769927979,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:17"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:10 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:10",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch each city's population from the knowledge base in parallel, then compute which two are closest in the final answer.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "retriever",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "retriever",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "retriever",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "retriever",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 62.52290105819702,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:18"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:13 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:13",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.21460485458374023,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:19"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:14 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:14",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.08815765380859375,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:20"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:16 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:16",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch the current population for each city in parallel to ensure accuracy, then compare them in the formatter.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.5377881526947021,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:21"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "What is the current population of London?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2951374053955078,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:22"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "What is the current population of Paris?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2901289463043213,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:23"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "What is the current population of Berlin?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.1990993022918701,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:24"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:22",
+        "n:23",
+        "n:24"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:25"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2198982238769531,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:26"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2095730304718018,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:27"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2335600852966309,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:28"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:26",
+        "n:27",
+        "n:28"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:29"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:19 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:19",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retrieve the precomputed population comparison from memory, then format the answer.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "ret1",
+                "question": "Find the populations of London, Paris, Berlin and tell me which two are closest in size."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:ret1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "ret1",
+              "question": "Find the populations of London, Paris, Berlin and tell me which two are closest in size."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:ret1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 33.52769207954407,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:30"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:20 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:20",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch each city's population in parallel, then compare.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 0.7756540775299072,
+        "provider": "groq",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:31"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.3178024291992188,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:32"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.237574815750122,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:33"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2167174816131592,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:34"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:32",
+        "n:33",
+        "n:34"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:35"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:22 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:22",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch each city's population in parallel, then compare.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 0.98294997215271,
+        "provider": "groq",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:36"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:23 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:23",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.3064765930175781,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:37"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:24 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:24",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.18938493728637695,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:38"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:26 skill=retriever reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:26",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous retriever attempt failed and memory hits are just echoes of the query; I will use the researcher to fetch current population data for each city in parallel and then format the comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "What is the current population of London?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "What is the current population of Paris?"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "What is the current population of Berlin?"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "What is the current population of London?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "What is the current population of Paris?"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "What is the current population of Berlin?"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.5840659141540527,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:39"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:27 skill=retriever reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:27",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retrieve the stored population comparison for London, Paris, Berlin from the knowledge base and present the answer.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "ret1",
+                "question": ""
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:ret1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "ret1",
+              "question": ""
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:ret1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 22.278684854507446,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:40"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:28 skill=retriever reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:28",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.5626664161682129,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:41"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "ret1",
+        "question": "Find the populations of London, Paris, Berlin and tell me which two are closest in size."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.3331482410430908,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:42"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:42"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:43"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.0331685543060303,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:44"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.332193374633789,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:45"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.3047590255737305,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:46"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:44",
+        "n:45",
+        "n:46"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:47"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:32 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:32",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous attempt failed due to a transient server error; re-fetching the population data for the three cities in parallel to allow the formatter to compare them.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rL",
+                "question": "current population of London"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rP",
+                "question": "current population of Paris"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "current population of Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:rL",
+                "n:rP",
+                "n:rB"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rL",
+              "question": "current population of London"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rP",
+              "question": "current population of Paris"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "current population of Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:rL",
+              "n:rP",
+              "n:rB"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 1.5123815536499023,
+        "provider": "gemini",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:48"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:33 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:33",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.517690896987915,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:49"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:34 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:34",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.19376349449157715,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:50"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2918694019317627,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:51"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2420361042022705,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:52"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.0806314945220947,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:53"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:51",
+        "n:52",
+        "n:53"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:54"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:37 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:37",
+        "recovery_reason": "transient"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retrieve stored population data for London, Paris, and Berlin from the knowledge base and use it to formulate the answer.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "population data for London, Paris, Berlin"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "population data for London, Paris, Berlin"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 42.675801277160645,
+        "provider": "openrouter",
+        "error": null
+      },
+      "_result_typed": true,
+      "id": "n:55"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:38 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:38",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.20019268989562988,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:56"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "What is the current population of London?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.0877223014831543,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:57"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "What is the current population of Paris?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2781767845153809,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:58"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "What is the current population of Berlin?"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.2472281455993652,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:59"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:57",
+        "n:58",
+        "n:59"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:60"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "ret1",
+        "question": ""
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "retriever",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1.9477026462554932,
+        "provider": "",
+        "error": "LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:61"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:61"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:62"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:41 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:41",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.2080230712890625,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:63"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:42 skill=retriever reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:42",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.21575450897216797,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:64"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:44 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:44",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.22104287147521973,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:65"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:45 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:45",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.22890853881835938,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:66"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:46 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:46",
+        "recovery_reason": "transient"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.23505425453186035,
+        "provider": "",
+        "error": "LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      },
+      "_result_typed": true,
+      "id": "n:67"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rL",
+        "question": "current population of London"
+      },
+      "status": "pending",
+      "id": "n:68"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rP",
+        "question": "current population of Paris"
+      },
+      "status": "pending",
+      "id": "n:69"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "current population of Berlin"
+      },
+      "status": "pending",
+      "id": "n:70"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:68",
+        "n:69",
+        "n:70"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:71"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:49 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:49",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:72"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:50 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:50",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:73"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:51 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:51",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:74"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:52 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:52",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:75"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:53 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:53",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:76"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "population data for London, Paris, Berlin"
+      },
+      "status": "pending",
+      "id": "n:77"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:77"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:78"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:56 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:56",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:79"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:57 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:57",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:80"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:58 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:58",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:81"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:59 skill=researcher reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:59",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:82"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:61 skill=retriever reason=transient error=LLM error: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:61",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:83"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:63 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:63",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:84"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:64 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:64",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:85"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:65 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:65",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:86"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:66 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:66",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:87"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:67 skill=planner reason=transient error=LLM error: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8108/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "recovers": "n:67",
+        "recovery_reason": "transient"
+      },
+      "status": "pending",
+      "id": "n:88"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:5"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    },
+    {
+      "source": "n:6",
+      "target": "n:8"
+    },
+    {
+      "source": "n:6",
+      "target": "n:9"
+    },
+    {
+      "source": "n:6",
+      "target": "n:10"
+    },
+    {
+      "source": "n:7",
+      "target": "n:12"
+    },
+    {
+      "source": "n:7",
+      "target": "n:13"
+    },
+    {
+      "source": "n:7",
+      "target": "n:14"
+    },
+    {
+      "source": "n:8",
+      "target": "n:11"
+    },
+    {
+      "source": "n:9",
+      "target": "n:11"
+    },
+    {
+      "source": "n:10",
+      "target": "n:11"
+    },
+    {
+      "source": "n:12",
+      "target": "n:15"
+    },
+    {
+      "source": "n:13",
+      "target": "n:15"
+    },
+    {
+      "source": "n:14",
+      "target": "n:15"
+    },
+    {
+      "source": "n:17",
+      "target": "n:22"
+    },
+    {
+      "source": "n:17",
+      "target": "n:23"
+    },
+    {
+      "source": "n:17",
+      "target": "n:24"
+    },
+    {
+      "source": "n:18",
+      "target": "n:26"
+    },
+    {
+      "source": "n:18",
+      "target": "n:27"
+    },
+    {
+      "source": "n:18",
+      "target": "n:28"
+    },
+    {
+      "source": "n:21",
+      "target": "n:32"
+    },
+    {
+      "source": "n:21",
+      "target": "n:33"
+    },
+    {
+      "source": "n:21",
+      "target": "n:34"
+    },
+    {
+      "source": "n:22",
+      "target": "n:25"
+    },
+    {
+      "source": "n:23",
+      "target": "n:25"
+    },
+    {
+      "source": "n:24",
+      "target": "n:25"
+    },
+    {
+      "source": "n:26",
+      "target": "n:29"
+    },
+    {
+      "source": "n:27",
+      "target": "n:29"
+    },
+    {
+      "source": "n:28",
+      "target": "n:29"
+    },
+    {
+      "source": "n:31",
+      "target": "n:44"
+    },
+    {
+      "source": "n:31",
+      "target": "n:45"
+    },
+    {
+      "source": "n:31",
+      "target": "n:46"
+    },
+    {
+      "source": "n:32",
+      "target": "n:35"
+    },
+    {
+      "source": "n:33",
+      "target": "n:35"
+    },
+    {
+      "source": "n:34",
+      "target": "n:35"
+    },
+    {
+      "source": "n:36",
+      "target": "n:51"
+    },
+    {
+      "source": "n:36",
+      "target": "n:52"
+    },
+    {
+      "source": "n:36",
+      "target": "n:53"
+    },
+    {
+      "source": "n:39",
+      "target": "n:57"
+    },
+    {
+      "source": "n:39",
+      "target": "n:58"
+    },
+    {
+      "source": "n:39",
+      "target": "n:59"
+    },
+    {
+      "source": "n:42",
+      "target": "n:43"
+    },
+    {
+      "source": "n:44",
+      "target": "n:47"
+    },
+    {
+      "source": "n:45",
+      "target": "n:47"
+    },
+    {
+      "source": "n:46",
+      "target": "n:47"
+    },
+    {
+      "source": "n:48",
+      "target": "n:68"
+    },
+    {
+      "source": "n:48",
+      "target": "n:69"
+    },
+    {
+      "source": "n:48",
+      "target": "n:70"
+    },
+    {
+      "source": "n:51",
+      "target": "n:54"
+    },
+    {
+      "source": "n:52",
+      "target": "n:54"
+    },
+    {
+      "source": "n:53",
+      "target": "n:54"
+    },
+    {
+      "source": "n:57",
+      "target": "n:60"
+    },
+    {
+      "source": "n:58",
+      "target": "n:60"
+    },
+    {
+      "source": "n:59",
+      "target": "n:60"
+    },
+    {
+      "source": "n:61",
+      "target": "n:62"
+    },
+    {
+      "source": "n:68",
+      "target": "n:71"
+    },
+    {
+      "source": "n:69",
+      "target": "n:71"
+    },
+    {
+      "source": "n:70",
+      "target": "n:71"
+    },
+    {
+      "source": "n:77",
+      "target": "n:78"
+    }
+  ]
+}

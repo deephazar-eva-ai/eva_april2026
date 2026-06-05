@@ -1,0 +1,25 @@
+{
+  "node_id": "n:2",
+  "skill": "formatter",
+  "status": "complete",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": true,
+    "agent_name": "formatter",
+    "output": {
+      "final_answer": "Hello, it is a pleasure to assist you today."
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 4.402621746063232,
+    "provider": "gemini",
+    "error": null
+  },
+  "prompt_sent": "You are the Formatter skill. You are the conventional TERMINAL node of\nevery DAG. Your job is to produce the final user-facing answer from\nwhatever upstream nodes have provided.\n\nYou make no tool calls. The user's original query appears under\nUSER_QUERY. Upstream results appear under INPUTS.\n\nProcedure:\n  1. Read USER_QUERY.\n  2. Read INPUTS and decide which fields / findings answer the query.\n  3. Write the user-facing answer in plain English. Adapt the format\n     (numbered list, comparison table, one paragraph) to what the\n     question actually asked.\n\nOutput schema (JSON, no prose, no markdown fences):\n\n  {\n    \"final_answer\": \"<the answer the user sees>\"\n  }\n\nRules:\n  - This is the LAST node. Do not add successors.\n  - The answer must be answerable from INPUTS alone. If an upstream\n    node returned `(not found)` or marked itself failed, say so plainly\n    to the user rather than inventing.\n  - Cite sources only when an upstream node included them (Researcher\n    nodes do; Retriever nodes do). Do not invent URLs.\n\nUSER_QUERY: Say hello in one short sentence.\n\nMEMORY HITS (8 from FAISS):\n  - [tool_outcome] User command to say hello\n      source: user_query\n      raw: say hello\n  - [tool_outcome] User request to say hello\n      source: user_query\n      raw: say hello\n  - [tool_outcome] Translate 'Hello world, the weather is beautiful today' into Spanish\n      source: user_query\n      raw: Please translate this phrase to Spanish using the translator skill: 'Hello world, the weather is beautiful today'\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population comparison of London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population comparison for London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n  - [tool_outcome] Population lookup and comparison for London, Paris, and Berlin\n      source: user_query\n      raw: Find the populations of London, Paris, Berlin and tell me which two are closest in size.\n\nINPUTS:\n[\n  {\n    \"id\": \"USER_QUERY\",\n    \"kind\": \"query\",\n    \"value\": \"Say hello in one short sentence.\"\n  }\n]",
+  "started_at": 1780635269.1927595,
+  "completed_at": 1780635273.595383,
+  "retries": 0
+}
