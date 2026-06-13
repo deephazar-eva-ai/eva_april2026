@@ -1,0 +1,15 @@
+
+══════════════════════════════════════════════════════════════════════════════
+session s8-df134c67  ─  query: hello
+══════════════════════════════════════════════════════════════════════════════
+[memory] embedding failed (RuntimeError('Gateway V9 client unavailable. Confirm llm_gatewayV9/client.py exists.')); item written without vector
+[memory.read] 1 hit(s) visible to every skill this run
+[memory.remember] classifier failed (TypeError("'NoneType' object is not callable")); falling back to fact-write
+[memory] embedding failed (RuntimeError('Gateway V9 client unavailable. Confirm llm_gatewayV9/client.py exists.')); item written without vector
+[n:1] planner            failed   (0.0s)  err=exception: TypeError: 'NoneType' object is not callable
+  ↪ n:1 failed (upstream_failure, skill=planner): planner-itself failure; not re-planning a planner
+
+══════════════════════════════════════════════════════════════════════════════
+FINAL: 
+══════════════════════════════════════════════════════════════════════════════
+
