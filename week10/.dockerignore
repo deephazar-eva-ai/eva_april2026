@@ -1,0 +1,9 @@
+.git
+.venv
+code/.venv
+llm_gatewayV9/.venv
+state
+__pycache__
+.pytest_cache
+*.log
+*.html

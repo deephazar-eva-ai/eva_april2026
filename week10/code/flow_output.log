@@ -1,0 +1,13 @@
+
+══════════════════════════════════════════════════════════════════════════════
+session s8-4cb503fb  ─  query: add 23 and 56
+══════════════════════════════════════════════════════════════════════════════
+[memory.read] 8 hit(s) visible to every skill this run
+[n:1] planner            complete (0.8s)
+[n:2] coder              complete (6.6s)
+[n:3] sandbox_executor   complete (0.0s)
+
+══════════════════════════════════════════════════════════════════════════════
+FINAL: {"exit_code": 0, "stdout": "79\n", "stdout_truncated": false, "stderr": "", "stderr_truncated": false, "files_written": [], "timed_out": false, "cwd": "/tmp/s8sandbox-1cw86_vt"}
+══════════════════════════════════════════════════════════════════════════════
+
