@@ -7,6 +7,22 @@ decomposes user queries into parallel skill nodes.
 
 ---
 
+## Test Queries and Trajectories
+
+Here are examples of completed sessions and their recorded trajectories:
+
+**Query 1 (LibreOffice GUI & Fallback):**
+> "Open the spreadsheet /home/acer/Documents/DEEPAK/eva_april2026/mainbranch/eva_april2026/week10/data/tasklist.ods . Find all rows where Status is \"Pending\" and Due Date is earlier than today. Create a new sheet named 'Overdue' containing those rows sorted by Due Date."
+
+[Trajectory Folder: s8-a3e08472](https://github.com/deephazar-eva-ai/eva_april2026/tree/main/week10/queryrecording/s8-a3e08472)
+
+**Query 2 (GNOME Calculator GUI):**
+> "add 45 and 98 and fetch the result"
+
+[Trajectory Folder: s8-f7487724](https://github.com/deephazar-eva-ai/eva_april2026/tree/main/week10/queryrecording/s8-f7487724)
+
+---
+
 ## Architecture: Five Layers
 
 The system is organised into five layers, each adding a distinct capability

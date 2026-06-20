@@ -176,35 +176,32 @@ def render_prompt(skill: Skill, query: str, resolved: list[dict],
     if hits_block:
         parts += ["", f"MEMORY HITS ({len(memory_hits)} from FAISS):", hits_block]
 
-    # ── Docker environment context ──────────────────────────────────────
+    # ── Environment context ──────────────────────────────────────────────
     # Injected into every skill so all roles know the filesystem layout,
     # installed applications, and how to handle host-path references.
     env_ctx = (
         "\n"
         "ENVIRONMENT CONTEXT:\n"
-        "  Runtime: headless Docker container (Ubuntu 22.04, no GUI monitor)\n"
-        "  Display: Xvfb virtual framebuffer on :99 (for desktop automation)\n"
         "  Workspace layout:\n"
         "    /app/code/          — agent source code (Python files, prompts, configs)\n"
         "    /app/llm_gatewayV9/ — LLM gateway server\n"
         "    Host data dir is bind-mounted at its ORIGINAL host path, e.g.:\n"
         "      /home/acer/Documents/DEEPAK/eva_april2026/mainbranch/eva_april2026/week10/data\n"
         "      This path is VALID inside the container — files can be read/written there.\n"
-        "  Installed applications:\n"
+        "  Desktop applications:\n"
         "    ✅ LibreOffice Calc (libreoffice-calc, libreoffice-gtk3)\n"
         "    ✅ GNOME Calculator (gnome-calculator)\n"
         "    ✅ xdotool, wmctrl, openbox (desktop automation tools)\n"
         "    ✅ Python 3.12, Pillow, ezodf, playwright (programmatic tools)\n"
-        "    ❌ VS Code, Sublime, Atom — NOT installed\n"
-        "    ❌ Chrome, Firefox — NOT installed (use playwright for web)\n"
-        "    ❌ GIMP, KolourPaint — NOT installed (use edit_image tool)\n"
+        "    ✅ VS Code, Slack, Cursor, Discord, Notion — Electron apps.\n"
+        "       Launch via computer skill with electron_debugging_port, then\n"
+        "       drive via the `page` tool (CDP). See Trap 5 in computer.md.\n"
         "  Key rules:\n"
-        "    - If a query says 'VS Code workspace' or 'currently active workspace',\n"
-        "      treat /app/code/ as the workspace. Do NOT try to launch VS Code.\n"
-        "    - For file operations (find, grep, read, write), use coder → sandbox_executor.\n"
+        "    - VS Code / Electron app tasks → use computer skill (NOT coder).\n"
         "    - For image editing, use the edit_image MCP tool (Pillow + vision).\n"
         "    - For spreadsheet operations, use computer skill with LibreOffice OR\n"
         "      modify_spreadsheet MCP tool (ezodf) for programmatic access.\n"
+        "    - For pure scripting / data processing with no GUI, use coder.\n"
     )
     parts += [env_ctx]
 

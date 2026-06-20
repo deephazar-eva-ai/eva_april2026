@@ -33,22 +33,21 @@ structured records the Formatter can render cleanly.
   summariser         condense long content
   critic             pass/fail evaluation of an upstream node
   formatter          render the final user-facing answer (TERMINAL)
-  coder              emit Python (routes to sandbox_executor). USE THIS for
-                     file system operations: finding files, reading/writing
-                     files, extracting code comments, creating summaries,
-                     data processing. The code runs in a sandbox with access
-                     to /app/code/ (workspace) and the host data directory.
+  coder              emit Python (routes to sandbox_executor). Use for
+                     pure data processing, file I/O, and scripting tasks
+                     where NO GUI application is needed.
   sandbox_executor   run Python from coder
-  computer           interact with the physical OS desktop, click buttons, type text, launch native apps. ALWAYS use this when the user asks to manipulate desktop applications (e.g., calculator, LibreOffice) instead of searching the web. NOTE: only LibreOffice Calc and GNOME Calculator are installed. VS Code, Chrome, Firefox, GIMP are NOT available.
+  computer           interact with the physical OS desktop, click buttons, type text, launch native apps. ALWAYS use this when the user asks to manipulate desktop applications (e.g., calculator, LibreOffice, VS Code, Electron apps) instead of searching the web. This skill supports the `page` tool for Electron/CDP-driven apps.
 
-ROUTING RULES — Docker environment:
-  - "VS Code workspace" or "active workspace" → route to coder (NOT computer).
-    The workspace files are at /app/code/. VS Code is NOT installed.
-  - File search/read/write/grep operations → coder → sandbox_executor.
+ROUTING RULES:
+  - "VS Code workspace", "active workspace", or any Electron app task
+    (VS Code, Slack, Cursor, Notion, Discord) → route to computer skill.
+    The computer skill can launch Electron apps with electron_debugging_port
+    and drive their DOM using the `page` tool via CDP.
   - Image editing (draw on image, annotate) → computer skill with edit_image tool.
   - Spreadsheet manipulation → computer skill with LibreOffice, OR coder with ezodf.
   - Web browsing → browser skill (uses headless playwright).
-  - Desktop GUI interaction → computer skill (only for installed apps).
+  - Pure data processing / scripting with no GUI → coder → sandbox_executor.
 
 Output (JSON, no markdown):
 {
