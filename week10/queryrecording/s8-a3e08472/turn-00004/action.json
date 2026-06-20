@@ -1,0 +1,11 @@
+{
+  "tool": "get_window_state",
+  "arguments": {
+    "pid": 184,
+    "window_id": 6291573
+  },
+  "result_summary": "window_id=6291573 pid=184 elements=1\n\n- [0] window \"v1_tasklist.ods \u2014 LibreOffice Calc\" [actions=[activate]]\n\n\n\u26a0\ufe0f WARNING: BLIND WINDOW DETECTED. The accessibility tree shows only the top-level window frame (elements=1). This means you CANNOT see any dialogs, menus, cells, or buttons inside the application. Your keystrokes may not be landing where you think. Possible causes:\n  - SAL_USE_VCLPLUGIN=gtk3 not set (LibreOffice is not using GTK3 backend)\n  - No window manager running (AT-SPI needs foc",
+  "timestamp": "1781965340.0366042",
+  "action_pending_verification": false,
+  "save_verified": false
+}

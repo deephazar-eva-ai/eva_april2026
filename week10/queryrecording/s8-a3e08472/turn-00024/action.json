@@ -1,0 +1,8 @@
+{
+  "tool": "__architecture_violation__",
+  "violation_type": "scan_act_verify",
+  "detail": "Agent tried to call 'desktop_judgment' with action_pending_verification=True",
+  "timestamp": "1781965592.3164055",
+  "action_pending_verification": true,
+  "save_verified": true
+}

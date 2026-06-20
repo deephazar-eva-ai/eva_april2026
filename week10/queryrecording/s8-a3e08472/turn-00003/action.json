@@ -1,0 +1,8 @@
+{
+  "tool": "get_accessibility_tree",
+  "arguments": {},
+  "result_summary": "27 running process(es), 1 visible window(s)\n- uv (pid 1)\n- dbus-daemon (pid 8)\n- Xvfb (pid 11)\n- openbox (pid 15)\n- /usr/libexec/at-spi-bus-launcher (pid 19)\n- /usr/bin/dbus-daemon (pid 26)\n- /app/code/.venv/bin/python3 (pid 33)\n- /app/code/.venv/bin/python3 (pid 45)\n- cua-driver (pid 59)\n- /usr/libexec/dconf-service (pid 69)\n- /app/code/.venv/bin/python3 (pid 76)\n- cua-driver (pid 90)\n- /usr/lib/libreoffice/program/oosplash (pid 99)\n- /usr/libexec/gvfsd (pid 122)\n- gvfsd (pid 128)\n- /usr/libexe",
+  "timestamp": "1781965241.4137483",
+  "action_pending_verification": false,
+  "save_verified": false
+}

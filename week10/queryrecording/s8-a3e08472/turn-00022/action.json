@@ -1,0 +1,11 @@
+{
+  "tool": "get_window_state",
+  "arguments": {
+    "pid": 267,
+    "window_id": 6291492
+  },
+  "result_summary": "window_id=6291492 pid=267 elements=1\n\n- [0] window \"\" [actions=[activate]]\n\n\n\u26a0\ufe0f WARNING: BLIND WINDOW DETECTED. The accessibility tree shows only the top-level window frame (elements=1). This means you CANNOT see any dialogs, menus, cells, or buttons inside the application. Your keystrokes may not be landing where you think. Possible causes:\n  - SAL_USE_VCLPLUGIN=gtk3 not set (LibreOffice is not using GTK3 backend)\n  - No window manager running (AT-SPI needs focus management)\n  - The application",
+  "timestamp": "1781965586.1283848",
+  "action_pending_verification": false,
+  "save_verified": true
+}

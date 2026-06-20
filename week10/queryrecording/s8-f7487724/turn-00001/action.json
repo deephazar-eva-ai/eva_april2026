@@ -1,0 +1,10 @@
+{
+  "tool": "launch_app",
+  "arguments": {
+    "name": "gnome-calculator"
+  },
+  "result_summary": "Launched 'gnome-calculator' with pid 99.",
+  "timestamp": "1781972697.219697",
+  "action_pending_verification": false,
+  "save_verified": false
+}

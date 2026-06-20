@@ -1,0 +1,8 @@
+{
+  "tool": "__architecture_violation__",
+  "violation_type": "save_before_kill",
+  "detail": "kill_app called with save_verified=False, pid=99",
+  "timestamp": "1781972720.936176",
+  "action_pending_verification": false,
+  "save_verified": false
+}

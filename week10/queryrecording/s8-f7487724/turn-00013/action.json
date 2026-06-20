@@ -1,0 +1,11 @@
+{
+  "tool": "get_window_state",
+  "arguments": {
+    "pid": 99,
+    "window_id": 41943041
+  },
+  "result_summary": "window_id=41943041 pid=99 elements=63\n- [0] application \"Calculator\" [actions=[win.undo,win.close,win.redo,win.paste,window.close,win.show-help-overlay,window.minimize,window.toggle-maximized,win.clear,win.copy,default.activate]]\n                            - [1] label \"45+98\" [actions=[clipboard.copy,selection.delete,clipboard.paste,link.open,clipboard.cut,link.copy,menu.popup,selection.select-all]]\n                            - [2] label \"=\" [actions=[clipboard.copy,selection.delete,clipboard.",
+  "timestamp": "1781972749.6838558",
+  "action_pending_verification": false,
+  "save_verified": false
+}
