@@ -108,6 +108,20 @@ AX-TREE SPREADSHEET STRATEGY (CRITICAL):
 - **Sorting:** Use `hotkey` with `alt+d s` to open the Sort dialog, then use `type_text` and `hotkey` to set the sort column and order.
 - **Verification:** After entering data and saving, call `get_window_state` again. The native AT-SPI scan will show you the updated SPREADSHEET DATA so you can verify the new sheet exists and has the correct data.
 
+- Trap 11: Electron `page` scripts do NOT have Node integration and GUI saving is fragile.
+  - Cause: You tried to use `fs.writeFileSync` (which is blocked by contextIsolation), or you hallucinated text after reading raw `document.body.innerText`, or your `ctrl+s` keystrokes failed to navigate the native GTK save dialog properly.
+  - Guard: You MUST interact with the application's UI, but do it robustly:
+    1. Press `ctrl+shift+f` via `hotkey` to open global search.
+    2. Search for the regex `(#.*|"""[\s\S]*?""")` (enable regex mode). Wait for results.
+    3. Read the search results precisely using the `page` tool:
+       ```javascript
+       { "action": "evaluate", "script": "Array.from(document.querySelectorAll('.search-view .monaco-list-row')).map(row => row.innerText).join('\\n')" }
+       ```
+    4. Group the returned text by filename in your thought process.
+    5. DO NOT use `ctrl+n` and `ctrl+s` to save the file! GTK dialogs will steal focus and corrupt your file. Instead, open the integrated terminal using `hotkey` `ctrl+shift+\`` (or `ctrl+\``).
+    6. Use `desktop_judgment` with `type_text` to echo the summary into the file. For example: `cat << 'EOF' > data/python_comments_summary.md\n[YOUR_SUMMARY_HERE]\nEOF\n` (Note the explicit newline `\n` to execute).
+    7. Verify the file exists, then `kill_app`.
+
 Other rules:
 - `launch_app` takes time to open. You MUST call `get_window_state` repeatedly after `launch_app` until the app is visible and returns a valid state. DO NOT ACT immediately after `launch_app`.
 - If an app is not receiving keystrokes, use `bring_to_front`.

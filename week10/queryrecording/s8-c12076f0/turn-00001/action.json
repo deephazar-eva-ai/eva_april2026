@@ -1,0 +1,11 @@
+{
+  "tool": "launch_app",
+  "arguments": {
+    "name": "cursor",
+    "electron_debugging_port": 9222
+  },
+  "result_summary": "Launched 'cursor' with pid 83576.",
+  "timestamp": "1782032355.6847482",
+  "action_pending_verification": false,
+  "save_verified": false
+}

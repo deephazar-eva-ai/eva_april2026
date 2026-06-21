@@ -867,7 +867,34 @@ async def run_with_tools(*, prompt: str, tools_allowed: list[str],
                                     os.remove(lock_file)
                             except:
                                 pass
-                        result_text = await mux.call_tool(tc_name, tc_args)
+                        if tc_name == "launch_app":
+                            app_name = tc_args.get("name") or tc_args.get("launch_path") or ""
+                            
+                            # Intercept vscode/code to use cursor, and parse manual --remote-debugging-port args
+                            if "code" in app_name.lower() or "cursor" in app_name.lower():
+                                tc_args["name"] = "cursor"
+                                
+                                # If the agent passed a full command line with the port, extract it
+                                if "--remote-debugging-port=" in app_name:
+                                    try:
+                                        port_str = app_name.split("--remote-debugging-port=")[1].split()[0]
+                                        tc_args["electron_debugging_port"] = int(port_str)
+                                    except:
+                                        pass
+                                        
+                                result_text = await mux.call_tool(tc_name, tc_args)
+                            elif " " in app_name:
+                                import shlex
+                                try:
+                                    args = shlex.split(app_name)
+                                    subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+                                    result_text = f"Successfully launched {args[0]} via subprocess."
+                                except Exception as e:
+                                    result_text = f"Failed to launch via subprocess: {e}"
+                            else:
+                                result_text = await mux.call_tool(tc_name, tc_args)
+                        else:
+                            result_text = await mux.call_tool(tc_name, tc_args)
                     
                     # Layer 2: Perception Interpretation (Apply filtering)
                     if tc_name in ("get_window_state", "get_accessibility_tree"):

@@ -332,13 +332,20 @@ async def run_skill(skill: Skill, node_id: str, graph_nodes,
             except Exception:
                 pass
 
+        is_success = True
+        error_msg = None
+        if output_obj.get("path") == "escalate" or "ERROR:" in str(output_obj.get("content", "")):
+            is_success = False
+            error_msg = output_obj.get("content", "Escalated from GUI tool")
+
         return AgentResult(
-            success=True,
+            success=is_success,
             agent_name=skill.name,
             output=output_obj,
             successors=successors,
             elapsed_s=time.time() - started,
             provider=reply.get("provider", ""),
+            error=error_msg,
         ), rendered
 
     if skill.tools_allowed:

@@ -41,9 +41,10 @@ structured records the Formatter can render cleanly.
 
 ROUTING RULES:
   - "VS Code workspace", "active workspace", or any Electron app task
-    (VS Code, Slack, Cursor, Notion, Discord) → route to computer skill.
+    (VS Code, Slack, Cursor, Notion, Discord) → route EXCLUSIVELY to the computer skill.
     The computer skill can launch Electron apps with electron_debugging_port
     and drive their DOM using the `page` tool via CDP.
+    CRITICAL: Do NOT use the `coder` skill for ANY part of an Electron app task. The `computer` skill must complete the ENTIRE task end-to-end, including extracting data, grouping text, and creating output files using the application's GUI.
   - Image editing (draw on image, annotate) → computer skill with edit_image tool.
   - Spreadsheet manipulation → computer skill with LibreOffice, OR coder with ezodf.
   - Web browsing → browser skill (uses headless playwright).

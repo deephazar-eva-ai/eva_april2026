@@ -27,6 +27,7 @@
 
 planner:
   prompt: prompts/planner.md
+  provider_pin: gemini
   tools_allowed: []
   temperature: 0.4         # decompositions need a little breathing room
   max_tokens: 1500
