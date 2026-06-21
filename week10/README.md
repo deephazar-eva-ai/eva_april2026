@@ -21,6 +21,11 @@ Here are examples of completed sessions and their recorded trajectories:
 
 [Trajectory Folder: s8-f7487724](https://github.com/deephazar-eva-ai/eva_april2026/tree/main/week10/queryrecording/s8-f7487724)
 
+**Query 3 (Electron CDP & DOM Parsing):**
+> "Open the currently active VS Code workspace. Find all comments in Python files and create a new file in data folder named python_comments_summary.md containing the filename and comments text grouped by file."
+
+[Trajectory Folder: s8-c12076f0](https://github.com/deephazar-eva-ai/eva_april2026/tree/main/week10/queryrecording/s8-c12076f0)
+
 ---
 
 ## Architecture: Five Layers
@@ -235,30 +240,20 @@ annotations (e.g., red circle above it).
 ### Task 3: File Operations — "Extract Python Comments"
 
 **Query:** Find all comments in Python files in the workspace, create
-`comments_summary.md`.
+`python_comments_summary.md`.
 
-**Routing:** Planner → `coder` → `sandbox_executor`
+**Routing:** Planner → `computer` skill → Cursor (Electron) via `page` tool
 
 **Cascade decisions:**
-- Planner routes to `coder` (not `computer`) because file operations don't
-  need GUI
-- Coder generates a Python script that walks `/app/code/`, extracts `#`
-  comments using line-by-line parsing
-- `sandbox_executor` runs the script in a subprocess sandbox, output file
-  written to the bind-mounted data directory
+- Planner routes exclusively to the `computer` skill, forbidding the `coder` fallback, enforcing an end-to-end GUI-driven extraction.
+- The agent launches Cursor with `--remote-debugging-port=9222`, connecting via the `page` tool to evaluate Chrome DevTools Protocol (CDP) scripts.
+- Agent uses `ctrl+shift+f` to search, reads the DOM precisely, and uses the integrated terminal (`ctrl+\``) to bypass unreliable native save dialogs.
 
 **Failure modes encountered:**
-- **VS Code launch loop** (Run 1): Agent tried to launch VS Code 20+ times
-  via `launch_app("code")` — VS Code is not installed in Docker.
-  Fix: Level 2 loop guard (Counter-based, 8-call threshold)
-- **Missing environment context** (Run 2): Planner routed to `computer`
-  skill because no prompt mentioned Docker filesystem layout.
-  Fix: ENVIRONMENT CONTEXT block injected into every skill prompt via
-  `render_prompt()`
-- **Coder stub prompt** (Run 2): The coder prompt was a stub that didn't
-  emit proper `{"code", "rationale"}` JSON. Fix: replaced with working
-  prompt that knows `/app/code/` is the workspace
-
+- **CDP Port Routing Failure** (Phase 1): The agent passed raw strings to `launch_app`, bypassing the multiplexer. The `page` tool attached to the wrong PID. Fix: intercept logic in `mcp_runner.py` to route debug ports correctly.
+- **Node Integration Missing** (Phase 2): Agent tried to evaluate `require('fs')` in the browser context, crashing due to `contextIsolation: true`. Fix: Trap 11 added, enforcing GUI-only search.
+- **Ghost Process Blocking CDP** (Phase 4): Cursor was already running in the background. Subsequent launches opened new windows but failed to bind the debug port. Fix: Explicit `killall -9 cursor` before launching.
+- **Blind DOM Hallucination & GTK Save Bug** (Phase 5): The agent dumped `document.body.innerText`, hallucinated fake results, and then lost focus in the GTK save dialog, creating an accidental `.yaml` file. Fix: Precise DOM extraction payload (`Array.from(...)`) and terminal-based file echoing.
 ---
 
 ## Failure Modes & Guards
