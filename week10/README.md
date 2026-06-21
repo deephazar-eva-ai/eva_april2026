@@ -28,9 +28,9 @@ Here are examples of completed sessions and their recorded trajectories:
 
 ---
 
-## Architecture: Five Layers
+## Architecture: Six Layers
 
-The system is organised into five layers, each adding a distinct capability
+The system is organised into six layers, each adding a distinct capability
 and escalation path:
 
 ```
@@ -46,6 +46,9 @@ and escalation path:
 ├─────────────────────────────────────────────────────────────┤
 │  Layer 3 — Set-of-Marks Vision Driver (vision LLM)          │
 │  Screenshot + Pillow annotations → /v1/vision → action JSON  │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 4 — State Carry-Over (Error Recovery Knob)           │
+│  Intercepts stale state / cache misses before escalation     │
 ├─────────────────────────────────────────────────────────────┤
 │  Layer 5 — Vision Fallback (emergency escalation)           │
 │  Raw screenshot → /v1/vision for coordinate detection        │
@@ -86,6 +89,12 @@ and escalation path:
   use the numbered marks to reference elements precisely
 - Escalation trigger: Layer 2b output was empty or evidently insufficient
 
+### Layer 4 — State Carry-Over (Error Recovery)
+- Implemented as an intercept knob inside the `computer` skill's `mcp_runner.py` loop.
+- Catches critical agent hallucination states such as `StaleStateError` (acting without scanning first) and cache misses (using stale `element_index` IDs after UI reflows).
+- Blocks the agent from entering an infinite parallel-execution loop by carrying over a `consecutive_errors` state counter.
+- Feeds explicit, actionable corrections ("You MUST call get_window_state before ANY action") directly back into the LLM context.
+- Acts as the safety gate: if the agent triggers Layer 4 errors consecutively (3+ times), the system forcibly escalates the session to Layer 5 Vision Fallback.
 ### Layer 5 — Vision Fallback (Desktop Agent)
 - Emergency escalation inside `mcp_runner.py` when the desktop agent
   (`computer` skill) encounters 3+ consecutive errors
@@ -124,6 +133,27 @@ The browser skill (`browser/skill.py`) owns the escalation cascade:
     └──────┴──────┘       no
            │
     "all layers exhausted" error
+```
+
+The desktop agent (`mcp_runner.py`) uses a separate, stateful error recovery cascade:
+
+```
+      Desktop Tool Call
+             │
+      ┌──────▼──────┐
+      │  Layer 2b   │─── success? ──→ return action
+      │  (AT-SPI)   │        │
+      └──────┬──────┘   Cache miss / Stale state
+             │
+      ┌──────▼──────┐
+      │  Layer 4    │─── < 3 consecutive errors? ──→ feed correction & retry
+      │ (Recovery)  │        │
+      └──────┬──────┘       yes (3+ errors)
+             │
+      ┌──────▼──────┐
+      │  Layer 5    │─── return (X, Y) coordinate via vision
+      │  (Fallback) │
+      └─────────────┘
 ```
 
 **Gateway-block short circuit:** If Layer 1's HTML contains CAPTCHA /
