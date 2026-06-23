@@ -776,8 +776,26 @@ async def run_with_tools(*, prompt: str, tools_allowed: list[str],
                                 tc_args.pop("urls", None)
                                 tc_args["name"] = app_name
                             
-                            if "libreoffice" in app_name.lower() and "--norestore" not in app_name:
-                                app_name = app_name.replace("libreoffice", "libreoffice --norestore")
+                            if "libreoffice" in app_name.lower():
+                                import shlex as _shlex
+                                try:
+                                    lo_parts = _shlex.split(app_name)
+                                except ValueError:
+                                    lo_parts = app_name.split()
+                                if lo_parts:
+                                    lo_cmd = lo_parts[0].split("/")[-1].lower()
+                                    if lo_cmd == "libreoffice-calc":
+                                        rest = [
+                                            p for p in lo_parts[1:]
+                                            if p not in ("--calc", "--norestore")
+                                        ]
+                                        app_name = " ".join(
+                                            ["libreoffice", "--norestore", "--calc"]
+                                            + [_shlex.quote(p) for p in rest]
+                                        )
+                                    elif "--norestore" not in lo_parts:
+                                        lo_parts.insert(1, "--norestore")
+                                        app_name = " ".join(_shlex.quote(p) for p in lo_parts)
                             if "name" in tc_args: tc_args["name"] = app_name
                             if "launch_path" in tc_args: tc_args["launch_path"] = app_name
 
@@ -887,8 +905,29 @@ async def run_with_tools(*, prompt: str, tools_allowed: list[str],
                                 import shlex
                                 try:
                                     args = shlex.split(app_name)
-                                    subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
-                                    result_text = f"Successfully launched {args[0]} via subprocess."
+                                    proc = subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+                                    window_hint = ""
+                                    if "libreoffice" in args[0].lower():
+                                        deadline = time.time() + 12
+                                        while time.time() < deadline:
+                                            try:
+                                                wm = subprocess.run(
+                                                    ["wmctrl", "-lp"],
+                                                    capture_output=True,
+                                                    text=True,
+                                                    check=False,
+                                                )
+                                                calc_lines = [
+                                                    line for line in wm.stdout.splitlines()
+                                                    if "LibreOffice Calc" in line or ".ods" in line
+                                                ]
+                                                if calc_lines:
+                                                    window_hint = " visible_window=" + calc_lines[-1]
+                                                    break
+                                            except Exception:
+                                                pass
+                                            time.sleep(0.5)
+                                    result_text = f"Successfully launched {args[0]} via subprocess. pid={proc.pid}.{window_hint} Call get_accessibility_tree to find the visible window_id, then call get_window_state with the real pid/window_id."
                                 except Exception as e:
                                     result_text = f"Failed to launch via subprocess: {e}"
                             else:

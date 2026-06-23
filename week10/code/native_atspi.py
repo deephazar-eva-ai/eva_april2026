@@ -52,8 +52,14 @@ if not atspi_addr:
         pass
 
 if atspi_addr:
+    # python3-gi's Atspi bindings discover the accessibility registry through
+    # DBUS_SESSION_BUS_ADDRESS. In the Docker desktop run, the normal D-Bus
+    # session and the AT-SPI bus are different addresses; using the normal
+    # session bus leaves the desktop empty even while LibreOffice is open.
     os.environ["DBUS_SESSION_BUS_ADDRESS"] = atspi_addr
     print(f"[NATIVE AT-SPI] Using AT-SPI bus: {atspi_addr} (was: {dbus_session})", file=sys.stderr)
+elif dbus_session != "(not set)":
+    print(f"[NATIVE AT-SPI] Using existing session bus: {dbus_session}", file=sys.stderr)
 else:
     print(f"[NATIVE AT-SPI] WARNING: No AT-SPI bus found, using session bus: {dbus_session}", file=sys.stderr)
 
@@ -81,7 +87,7 @@ def find_app(target_pid: int):
     """
     import time
     
-    for attempt in range(4):
+    for attempt in range(20):
         desktop = Atspi.get_desktop(0)
         n_apps = desktop.get_child_count()
         print(f"[NATIVE AT-SPI] Attempt {attempt+1}: desktop has {n_apps} app(s)", file=sys.stderr)
